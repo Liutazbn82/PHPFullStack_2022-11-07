@@ -1,0 +1,36 @@
+body {
+    /* Important žyma yra neperrašoma savybė visam kode */
+    background-color: grey !important;
+    margin: 0;
+    font-family: 'roboto', sans-serif;
+}
+nav {
+    background-color: white;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; /*nenaudojame burbuliukų sąraše */
+    display: flex;
+    justify-content: space-around;
+
+}
+
+nav ul a {
+    display: flex;
+    padding: 10px 0;
+    text-decoration: none; /* nuimam pabraukimą po nuoroda*/
+    color: black;
+}
+
+nav ul a i {
+    margin-right: 10px;
+}
+/* Susirasime antrą elementą <li> jame surasime elementą <i> ir priskirsime savybę tik jam */
+nav ul li:nth-child(2) i  {
+    margin-right: 3px;
+}
+
+nav ul a:hover {
+    color: red;
+}

@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    background-color: purple;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    width: 1140px;
+    margin: 0 auto;
+    /* virsus apacia nulis, kaire desine auto */
+    /* display: flex; */
+}
+
+header {
+    padding: 15px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .logo img {
+    width: 160px;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0px;
+    list-style: none;
+    display: flex;
+}
+
+header nav ul a {
+    color: white;
+    opacity: 0.8;
+    text-decoration: none;
+    padding: 10px 12px;
+    display: block;
+    font-size: 13px;
+}

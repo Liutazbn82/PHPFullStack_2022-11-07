@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexboxai</title>
+    <style>
+        .boxes {
+            background-color: black;
+            padding: 50px;
+        }
+
+        /* prasideda clearfix pseudo elementas*/
+
+        .clearfix::before,
+        .clearfix::after {
+            content: ""; /* jeigu nėra turino pseudo elementas neveikia */
+            display: table;
+            clear: both; /*galima rinktis left, right ir both */
+        }
+
+        /* Baigiasi clearfix elementas */
+
+        .column {
+            width: 50%;
+            height: 300px;
+            float:left;
+        }
+
+        /* prasideda flexboxo savybes */
+        .flexboxes {
+            display: flex;
+        }
+        .flexcolumn {
+            width: 50%;
+            height: 300px;
+        }
+
+        .red {
+            background-color: red;
+        }
+        .blue {
+            background-color: blue;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Floating boxes</h1>
+
+    <div class="boxes clearfix">
+        <div class="column red" ></div>
+        <div class="column blue" ></div>
+    </div>
+
+    <h1>Flex boxes</h1>
+
+    <div class="boxes flexboxes">
+        <div class="flexcolumn red"></div>
+        <div class="flexcolumn blue"></div>
+    </div>
+</body>
+</html>
