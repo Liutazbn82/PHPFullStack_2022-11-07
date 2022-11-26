@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML struktūra</title>
+    <style>
+        header {
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            padding: 5px 10px;
+        }
+        main {
+            display: flex;
+        }
+        article {
+            width: 70%;
+        }
+        aside {
+            width: 30%;
+        }
+        footer {
+            text-align: center;
+        }
+        .container {
+            width: 1140px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Headeris</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Pirmas</a></li>
+                <li><a href="#">Antras</a></li>
+                <li><a href="#">Trečias</a></li>
+                <li><a href="#">Ketvirtas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <article>
+            <h1>Straipsnio pavadinimas</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis aliquid illum labore praesentium porro repudiandae natus doloremque explicabo cumque officia.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </article>
+        <aside>
+            <h2>Naujausia propaganda</h2>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.  rem minima explicabo ratione harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.  rem minima explicabo ratione harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.  rem minima explicabo ratione harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.  rem minima explicabo ratione harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.  rem minima explicabo ratione harum.</li>
+            </ul>
+
+        </aside>
+    </main>
+    <footer>
+        2022 Copyright ccc.NerBal.com, Inc
+    </footer>
+</body>
+</html>

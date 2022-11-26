@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pozicijos</title>
+    <style>
+        /* 
+        position: static;   standartinė (default) priskiriama pozicija.
+        position: relative; nurodo kad pagal šio elemento viduje, lygiuojami visi absoliutūs elementai.
+        position: absolute; žymi kad elementas bus lygiuojamas pagal artimiausią reliatyvų elementą.
+        */
+    .relative {
+        background-color: black;
+        height: 500px;
+        width: 500px;
+        margin: 0 auto;
+        position: relative;
+        top: 50px;
+    }
+    .absolute {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        /* margin: 100px 0 0 250px; */
+        position: absolute;
+        /* top: 20; */
+        left: 0;
+        top: 0;
+        
+    }
+    .bottom-right {
+        right: 0;
+        bottom: 0;
+        left: unset;
+        top: unset;
+    }
+    .custom-position {
+        top: 50px;
+        left: 500px;
+    }
+    .block {
+        /* display: block; */
+        margin-top: 8000px auto 0;
+        background-color: black;
+        width: 700px;
+        height: 300px;
+    }
+
+    .absolute-block {
+        position: absolute;
+        width: 50px;
+        height:50px;
+        background-color: violet;
+        top: 8600px;
+        left: 900px;
+    }
+
+    h1 {
+        color: white;
+    }
+   
+    </style>
+</head>
+<body> <!--Pirmas reliatyvus elementas į kurį lygiuojame-->
+    <h2>statinis turinys</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat obcaecati repellat temporibus odio nemo in, fugiat exercitationem corrupti qui quibusdam sapiente error tempora quaerat. Quisquam molestiae voluptates, quam doloribus rem officia incidunt ex amet excepturi debitis? Optio praesentium quibusdam deleniti a blanditiis sapiente fugiat odit eum ab accusamus? Iure dicta asperiores adipisci quaerat rerum maxime, quas inventore earum in! Qui, sapiente laudantium vero a nihil quisquam nisi! Vero iusto quisquam tempora! Ullam, nulla vero, libero assumenda repellendus nostrum harum pariatur alias expedita saepe doloremque sit, enim explicabo! Rem, sit sunt! Dicta amet a ratione minus consectetur nam! Eveniet officia debitis exercitationem vero. Alias earum ipsum eaque, repellat optio quidem aliquid perferendis enim blanditiis! Itaque fuga sunt enim numquam, amet tenetur, eligendi, distinctio dolorem quos minus porro natus pariatur doloremque quia quidem! Ex alias at quia molestias, repellat magni ullam non, culpa amet debitis maxime doloremque modi ut provident quas nemo excepturi ad, quisquam molestiae rem placeat aliquid veritatis vel aut. Adipisci necessitatibus a ea nesciunt et illum incidunt quisquam repellat corporis explicabo voluptate iste aspernatur, sapiente quas tenetur quibusdam vero molestias ipsam dicta asperiores ab ducimus. Impedit, numquam doloremque? Molestias iste expedita qui sequi architecto totam, veniam omnis sint officiis praesentium laborum at aliquid mollitia doloremque ea ipsum incidunt! Voluptatum numquam inventore quam nihil earum! Consequatur quasi dolorem esse blanditiis temporibus nostrum nemo dolor? Dolores, inventore cupiditate. Nihil molestiae magni mollitia dolores, vero tempora dolor, explicabo voluptate placeat natus quibusdam fugiat ut excepturi consequuntur consectetur facilis voluptatum itaque doloribus? Libero minima consectetur recusandae amet accusantium impedit voluptatem dolor, explicabo aliquid fugit ipsam veniam, enim, nesciunt pariatur dolorem cupiditate eligendi. Ea, quae dolorem! Eaque, expedita doloribus. Quis nulla nam corporis reprehenderit eius, eos voluptates odit laudantium placeat, maiores aperiam explicabo, doloribus unde impedit similique. In minus quidem maiores dolore veniam soluta.</p>
+    <div class="relative">
+        <h1>Statinis turinys reliatyviam elemente</h1>
+        <div class="absolute bottom-right"></div>
+        <div class="absolute custom-position"></div>
+    </div>
+
+    <div class="block">    
+        <div class="absolute-block">    </div>
+    </div>
+</body>
+</html>
