@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOR ciklas</title>
+</head>
+
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        // while ciklas
+        let i = 0;
+        while (i < 10) {
+            console.log('Eilutes numeris', i);
+            i++;
+        }
+        // ciklo pagalba paimame visas reikšmes kiekvienos iteracijos metu
+        console.log('Raidziu paemimas is stringo kiekvieno ciklo pabaigoje')
+        const stringas = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. '
+
+        i = 0;
+        while (i < stringas.length) {
+            console.log(stringas[i]);
+            i++;
+        }
+        // FOR ciklas
+        console.log('Inkrement ***************');
+
+        for (let x = 0; x < 10; x++) {
+            console.log('Didinam', x);
+        }
+
+        console.log('Dekrement ***************');
+
+        for (let c = 10; c > 0; c--) {
+            console.log('Mazinam', c);
+        }
+
+        // ciklas cikle
+        for (let i = 0; i < 10; i++) {
+            for (let x = 0; x < 5; x++) {
+                console.log('xxxx');
+            }
+            console.log('yy');
+        }
+
+        // while ciklas cikle
+
+        i = 5;
+        while (i > 0) {
+            console.log('Pirst', i);
+            let x = 0;
+            while (x < 5) {
+                console.log('Vidinės eilutės numuris', x);
+                x++;
+            }
+            i--;
+        }
+
+        document.write( '<h2 style="color: red";>FOR ciklas</h2>');
+    </script>
+</body>
+
+</html>

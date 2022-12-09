@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masyvai</title>
+</head>
+
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // Masyvai
+
+        const masyvas = ['labas Pasauli', 10, false, null, 15, 20, 'jonukas'];
+        // console.log(masyvas);
+        const products = ['Televizorius SM', 'UAH56891THC', 599.99, 1]
+
+        // Multidimensinis masyvas
+
+        const multipleProducts = [
+            ['Televizorius SM', 'UAH56891THC', 599.99, 1],
+            ['Televizorius SM', 'UAH56891THC', 599.99, 1],
+            ['Televizorius SM', 'UAH56891THC', 599.99, 1]
+        ];
+
+        console.log(multipleProducts[0]);
+
+        // masyvo ilgio nustatymas
+        console.log(multipleProducts[0].length);
+
+        // istrynimas is masyvo indexo 0
+        delete multipleProducts[0];
+        console.log(multipleProducts);
+
+        //
+        multipleProducts[1] = 'Dabar elementas tapo stringu';
+
+        console.log(multipleProducts);
+
+        // friday challenge interpas
+
+        
+        // let skaic1 = rand(0,100);
+        // let skaic2 = rand(0,100);
+        // let skaic3 = rand(0,100);
+        // let bendras = 0;
+        // let visoSkaiciu = 0;
+
+        // console.log('Sugeneruoti skaičiai', skaic1, skaic2, skaic3);
+        // console.log('Vidurkis:', ((skaic1 + skaic2 + skaic3)/3).toFixed(2));
+        
+        // if(skaic1 > 10 && skaic1 < 90) {
+        //     bendras += skaic1;
+        //     visoSkaiciu++;
+        // }
+        // if(skaic2 > 10 && skaic2 < 90) {
+        //     bendras += skaic2;
+        //     visoSkaiciu++;
+        // }
+        // if(skaic3 > 10 && skaic3 < 90) {
+        //     bendras += skaic3;
+        //     visoSkaiciu++;
+        // }
+        // if(bendras > 0)
+        // console.log('Vidurkis atmetus reikšmes kai (10 < skaičiai < 90):', ((bendras)/visoSkaiciu).toFixed(2));
+
+        const skaiciai = [];
+        // 100 skaiciu masyvo generavimas
+        for(let i = 0; i < 100; i++) {
+            skaiciai[i] = rand(0, 100);
+        }
+        // sugeneruoto masyvo tikrinimas
+
+        let bendras = 0;
+        let excludedBendras = 0;
+        let numbers = 0;
+        console.log(skaiciai);
+        for(let i = 0; i < skaiciai.length; i++) {
+            bendras += skaiciai[i];
+
+            if(skaiciai[i] > 10 && skaiciai[i] < 90) {
+                excludedBendras += skaiciai[i];
+                numbers++;
+            }
+        }
+        console.log('Vi dur kis:', (bendras / skaiciai.length).toFixed(3));
+        console.log('Vidurkis atmetus reiksmes:', (excludedBendras / numbers).toFixed(3));
+
+        
+
+    </script>
+</body>
+
+</html>

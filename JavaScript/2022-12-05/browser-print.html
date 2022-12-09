@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser print</title>
+    <style>
+        body {
+            word-break: break-all;
+        }
+        
+       
+        
+
+        
+
+    </style>
+</head>
+<body>
+    <script>
+        // write metodas skirtas atvaizduoti turini narsykleje 
+        document.write('<h1>Linija</h1>');
+        let i = 0;
+        let result = '';
+        while(i<400) {
+            if(i % 50 === 0 && i !=0) // !=0 reiskia kad nelygu 0. (! invertuoja)
+            result += '<br />';
+            result += '*';
+            i++;
+        }
+
+
+        document.write(result)
+        //window
+    </script>
+</body>
+</html>

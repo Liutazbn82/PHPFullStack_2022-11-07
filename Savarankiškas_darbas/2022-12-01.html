@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2022-12-01 Savarankiškas darbas</title>
+</head>
+<body>
+    <script>
+        let result ='';
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+// 1 *********************************************************
+        console.log('************ Pirma užduotis ************')
+        const pirmas = rand(0,4);
+        const antras = rand(0,4);
+        console.log(pirmas, antras);
+        let rezult = 0;
+
+        if(pirmas > antras) {
+            if(antras === 0) {
+            rezult = 'Dalyt iš nuliaus negalima';
+            } else {
+            rezult = (pirmas / antras).toFixed(2);
+            }
+        } else {
+            result = (antras / pirmas).toFixed(2);
+        }
+        console.log('Gautos reikšmės: ', pirmas, antras);
+        console.log('Rezuljtac:', rezult)
+
+// 2 *********************************************************
+        console.log('************ Antra užduotis ************')
+        let k1 = rand(0,25);
+        let k2 = rand(0,25);
+        let k3 = rand(0,25);
+        console.log(k1,k2,k3);
+        if(k1 == k2 || k1 == k3 || k2 == k3) console.log("Vidutinės reikšmės nėra");
+        else if(Math.max(k2,k3) > k1 && Math.min(k2,k3) < k1) console.log('Vid. reikšmė: ' +k1);
+        else if(Math.max(k1,k3) > k2 && Math.min(k1,k3) < k2) console.log('Vid. reikšmė: ' +k2);
+        else if(Math.max(k1,k2) > k3 && Math.min(k1,k2) < k3) console.log('Vid. reikšmė: ' +k3);
+        console.log('Antras būdas')
+        const a = rand(0,25);
+        const b = rand(0,25);
+        const c = rand(0,25);
+        console.log(a,b,c)
+        const min = Math.min(a,b,c);
+        const max = Math.max(a,b,c);
+        console.log('Sugeneruota:', a, b , c);
+        console.log('Mažiausia reikšmė:', min);
+        console.log('Maksimali reikšmė:', max);
+        console.log('vidutine:', (a+b+c)-(min +max));
+
+
+
+
+
+// 3 *********************************************************
+        console.log('************ Trečia užduotis ************')
+        const actVardas = 'Rudislovas';
+        const actPavardas = 'Potapičius';
+        console.log(actVardas, actPavardas);
+        let result3 =  actVardas.substring(0,3) + actPavardas.substring(1,5);
+        console.log(result3)
+        // arba
+        const inicials = actVardas[0] + actPavardas[0];
+        console.log('Inicialai', inicials);
+
+// 4 *********************************************************
+        console.log('************ Ketvirta užduotis ************')
+
+        const stringas = 'abcdefghijklmnopqrstuvwxyz';
+        const number1 = rand(0, stringas.length-1);
+        const number2 = rand(0, stringas.length-1);
+        const number3 = rand(0, stringas.length-1);
+        console.log(number1, number2, number3);
+        console.log(stringas[number1] + stringas[number2] + stringas[number3]);
+
+
+    </script>
+    
+</body>
+</html>

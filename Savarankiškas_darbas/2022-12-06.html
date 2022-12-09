@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savarankiškas darbas</title>
+    <style>
+        body {
+            line-height: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        
+        document.write('<h2>2022-12-06</h2>'); 
+        document.write('<h3>Užduotis 1, 2 </h3>'); 
+        document.write('<h4 style="line-height: 20px">1. Nupieškite kvadratą iš “*”, kurio kraštines sudaro 100 “*”. Panaudokite css stilių, kad kvadratas ekrane atrodytų kvadratinis.</h4>'); 
+        document.write('<h4 style="line-height: 20px">2. Prieš tai nupieštam kvadratui nupieškite raudonas istrižaines. <br/></h4>'); 
+
+        const size = 11;
+        let result = '';
+        
+        for(let y = 1; y <= size; y++) {
+            for(let x = 1; x <= size; x++ ) {
+                if(y === x || x === (size - y) + 1 ) {
+                    result += '<span style="color: red;">*</span>';
+                } else {
+                    result += '<span style="color: lightblue;">*</span>';
+                }
+            }
+            result += '<br/>';
+        }
+        document.write(result);
+
+        document.write('<h3>Užduotis 3</h3>'); 
+        document.write('<h4 style="line-height: 20px">Metam monetą. Monetos kritimo rezultatą imituojam rand() funkcija, kur 0 yra herbas, o 1 - skaičius. Monetos metimo rezultatus išvedame į ekraną atskiroje eilutėje: “S” jeigu iškrito skaičius ir “H” jeigu herbas. Suprogramuokite tris skirtingus scenarijus kai monetos metimą stabdome:</h4>');
+            //Iškritus herbui;
+            //Tris kartus iškritus herbui;
+            //Tris kartus iš eilės iškritus herbui;
+
+
+
+
+
+        document.write('<h3>Užduotis 4</h3>'); 
+        document.write('<h4 style="line-height: 20px">Sugeneruokite masyvą iš 30 elementų (indeksai nuo 0 iki 29), kurių reikšmės yra atsitiktiniai skaičiai nuo 5 iki 25.</h4>');
+        
+        // 4 UZDUOTIS
+
+        const treciasMasyvas =[];
+        for(let i = 0; i < 30; i++) {
+            treciasMasyvas[i] = rand(5, 25);
+
+        }
+        document.write(treciasMasyvas);
+        
+        // masyvo tikrinimas, kiek masyve reiksmiu > 10;
+
+        let counter = 0;
+        let max = 0;
+        let indexes = [];
+
+        for(let i = 0; i < treciasMasyvas.length; i++) {
+            if(treciasMasyvas[i] > 10)
+                counter++;
+
+            if(treciasMasyvas[i] > max )
+                max = treciasMasyvas[i];
+
+            if(treciasMasyvas[i] === max ) {
+                indexes[indexes.length] = i; // indexes.length bus talpinama indexo reiksme. 
+            }
+        }
+
+        console.log(max);
+        // console.log(counter);
+
+
+
+
+    </script>
+</body>
+
+</html>

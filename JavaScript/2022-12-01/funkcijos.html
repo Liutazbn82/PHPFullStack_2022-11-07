@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcijos</title>
+</head>
+
+<body>
+    <script>
+        let result ='';
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        const skaicius = Math.random(); //sugeneruojamas atsitiktinis skaicius po kablelio nuo 0 iki 1;
+        const round = Math.round(skaicius) // kintamojo reiksmes apvalinimas
+        const floor = Math.floor(skaicius) // kintamojo reikšmės apvalinimas iki mažiausio sveiko skaičiaus.
+        const ceil = Math.ceil(skaicius)    // kintamojo reikšmės apvalinimas iki didžiausio sveiko skaičiaus.
+            console.log(ceil);
+        const x=1;
+        const y=101;
+        const z=1082;
+        const w=2;
+            console.log('Didziausias skaicius', Math.max(x,y,z,w));
+            console.log('Didziausias skaicius', Math.min(x,y,z,w));
+        const stringas = 'Lorem Ipsum dolor sit amet consectetur adipisicing elit. Similique odit totam porro ea doloremque iure ipsam maxime at quos, repudiandae possimus quam quaeratobcaecati sunt qui aliquam, eius autem laudantium.'
+        if(stringas.startsWith('Lorem')) 
+            console.log('Stringas prasideda zodziu Lorem');
+        let s = 6
+        if(stringas.startsWith('Ipsum', s)) 
+            console.log('Stringas nuo',s,'simbolio tesiasi zodziu ipsum');
+
+        if(stringas.endsWith('.'))
+            console.log('Stringas baigiasi .');
+        
+            // simbolio paėmimas iš stringo pagal 6 poziciją
+
+        result = stringas.charAt(6)
+        console.log(result)
+        console.log(stringas[6]);
+
+        result = stringas[6] + stringas[10] + stringas[12];
+        console.log(result)
+        result = stringas.charAt(6) + stringas.charAt(10) + stringas.charAt(12);
+        console.log(result)
+
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savarankiškas darbas 12-05</title>
+    <style>
+        body {
+            word-break: break-all;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        document.write('<h2>2022-12-05</h2>'); 
+        document.write('<h3>Užduotis 1</h3>'); 
+        document.write('<h4 style="line-height: 20px">1. Naršyklėje nupieškite linija iš 400 “*”. </h4>'); 
+        document.write('<h4 style="line-height: 20px">a) Naudodami css stilių “suskaldykite” liniją taip, kad visos žvaigždutės matytųsi ekrane;</h4>'); 
+
+
+        let i = 0;
+        let result1 = '';
+        while(i<400) {
+            result1 += '*';
+            i++;
+        }
+
+        document.write(result1)
+        document.write('<h4 style="line-height: 20px">b) Programiškai “suskaldykite” žvaigždutes taip, kad vienoje eilutėje nebūtų daugiau nei 50 “*”; </h4>'); 
+
+        let inc = 0;
+        let result2 = '';
+        while(inc<400) {
+            if(inc % 50 === 0 && inc !=0) // !=0 reiskia kad nelygu 0. (! invertuoja)
+            result2 += '<br />';
+            result2 += '*';
+            inc++;
+        }
+
+        document.write(result2);
+        console.log(result2);
+
+        document.write('<h3>Užduotis 3</h3>');
+        document.write('<h4 style="line-height: 20px"> Sugeneruokite atsitiktinį skaičių nuo 1 iki 6 ir jį atspausdinkite atitinkame h tage</h4>'); 
+
+        // Naudokite funkcija rand(). Sugeneruokite atsitiktinį skaičių nuo 1 iki 6 ir jį 
+        // atspausdinkite atitinkame h tage. Pvz skaičius 3- rezultatas: <h3>3</h3>
+
+        let kint = 0;
+        let rez = rand(1,6);
+        console.log(rez);
+        document.write('<h',rez,'>','h-',rez,'</h',rez,'>');
+
+        document.write('<h3>Užduotis 4</h3>');
+        document.write('<h4 style="line-height: 20px"> Naudokite funkcija rand(). Atspausdinkite 3 skaičius nuo -10 iki 10. Skaičiai mažesni už 0 turi būti žali, 0 - raudonas, didesni už 0 mėlyni.</h4>'); 
+
+        let num = 0;
+        let n = 0;
+        const kiekis = 3;
+        for(i = 0; i <= (kiekis-1); i++) {
+            n = rand(-10, 10);
+            if (n < 0) {
+                document.write('<span style="color: green"> ', n ,'</span>');
+            } else if (n === 0) {
+                document.write('<span style="color: red"> ', n ,'</span>');
+            } else {
+                document.write('<span style="color: blue"> ', n ,'</span>');
+            }
+        }
+
+        document.write('<h3>Užduotis 5</h3>');
+        document.write('<h4 style="line-height: 20px"> Sugeneruokite 300 atsitiktinių skaičių nuo 0 iki 300, atspausdinkite juos atskirtus tarpais ir suskaičiuokite kiek tarp jų yra didesnių už 150.  Skaičiai didesni nei 275 turi būti raudonos spalvos.</h4>'); 
+
+        let count = 0;
+        result3 = '';
+
+        for (let i=0; i < 300; i++) {
+            const number = rand(0, 300);
+            if (number > 150)
+                count++;
+            if (number > 275) {
+                result3 += '<span style="color: red; "><b>' + number + '</b></span> ';
+            } else {
+                result3 += number + ' ';
+            }
+        }
+        document.write('Rezultac: ' + result3);
+
+        document.write('<h3>Užduotis 6</h3>');
+        document.write('<h4 style="line-height: 20px">Vienoje eilutėje atspausdinkite visus skaičius nuo 1 iki 3000, kurie dalijasi iš 77 be liekanos. Skaičius atskirkite kableliais. Po paskutinio skaičiaus kablelio neturi būti. Jeigu reikia, panaudokite css, kad visi rezultatai matytūsi ekrane. </h4>'); 
+
+        result1 = '';
+
+        for(let i=1; i < 3000; i++) {
+            if (i % 77 === 0)
+                result1 += (i === 2926) ? i + '' : i+ ', ';
+        }
+        document.write('REZULTATAS: ' + result1);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penktadieniaus iššūkis</title>
+</head>
+<body>
+    <script>
+        let result ='';
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        console.log('*************** Pirma užduotis ***************')
+        const candles = rand(5, 3000)
+        let nuolaida = 0;
+
+        if(candles > 1000)
+            nuolaida = candles * 0.03;
+        if(candles > 2000)
+            nuolaida = candles * 0.04;
+
+        console.log('Uzsakymo kaina', candles.toFixed(2),'Eur');
+        console.log('Nuolaida', nuolaida.toFixed(3));
+        console.log('Kaina su nuolaida', (candles - nuolaida).toFixed(2),'Eur');
+
+        console.log('*************** Antra užduotis ***************')
+
+        let skaic1 = rand(0,100);
+        let skaic2 = rand(0,100);
+        let skaic3 = rand(0,100);
+        let bendras = 0;
+        let visoSkaiciu = 0;
+
+        console.log('Sugeneruoti skaičiai', skaic1, skaic2, skaic3);
+        console.log('Vidurkis:', ((skaic1 + skaic2 + skaic3)/3).toFixed(2));
+        
+        if(skaic1 > 10 && skaic1 < 90) {
+            bendras += skaic1;
+            visoSkaiciu++;
+        }
+        if(skaic2 > 10 && skaic2 < 90) {
+            bendras += skaic2;
+            visoSkaiciu++;
+        }
+        if(skaic3 > 10 && skaic3 < 90) {
+            bendras += skaic3;
+            visoSkaiciu++;
+        }
+
+        console.log('Vidurkis atmetus reikšmes kai (10 < skaičiai < 90):', ((bendras)/visoSkaiciu).toFixed(2));
+
+
+
+        console.log('*************** Trečia užduotis ***************')
+        console.log('Dingo be žinios')
+
+    </script>
+</body>
+</html>
