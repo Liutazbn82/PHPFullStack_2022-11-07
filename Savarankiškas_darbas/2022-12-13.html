@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2022-12-13 d. užduotys</title>
+</head>
+
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        console.log('************************* 1 užduotis ********************************');
+        document.write('<h2>Pirma užduotis</h2><br/>');
+        // sukurti funkcija kuri priimtu parametra "name". 
+        // Jos tikslas atspausdinti naršyklėje tekstą "Labas," 
+        // ir šalia jo perduotą vardą. Pvz "Labas, Elena".
+
+        //let name = 'Alena';
+        const welcomeMessage = name => {
+            return 'Labas,' + name;
+        }
+        console.log(welcomeMessage(' Elena'))
+        document.write(welcomeMessage(' Elena</br>'))
+
+        // function welcomeMessage(name) {
+        //     return 'Labas, ' + name;
+        // }
+        //const welcomeMessage = name => 'labas,'  + name;
+
+        // ************************ Sutrumpinta sintaksė to paties viršuje **********************************
+
+        // //let name = 'Alena';
+        const welcomeMessage1 = name => 'Labas,' + name;
+        console.log(welcomeMessage1(' Elena'))
+        document.write(welcomeMessage1(' Elena</br>'));
+
+        document.write('<h2>Antra užduotis</h2><br/>');
+
+        console.log('************************* 2 užduotis ********************************');
+        // ***************************** 2 uzduotis *****************************************
+        // const textLength = text => {
+        //     return text.length;
+        // }
+        // document.write('Teksto ilgis frazei "Pastatas" yra:', text.length ('Pastatas'));
+
+        // **************************** trumpesne sintakse ******************************
+
+        const textLength = text => text.length;
+        document.write('Teksto ilgis frazei "Pasikiškiakopūsteliaudamas"', ' yra - ', textLength('Pasikiškiakopūsteliaudamas'), ' raidės.');
+        console.log('Teksto ilgis frazei "Pasikiškiakopūsteliaudamas"', ' yra - ', textLength('Pasikiškiakopūsteliaudamas'), ' raidės.');
+
+        document.write('<h2>Trečia užduotis</h2><br/>');
+
+        console.log('************************* 3 užduotis ********************************');
+        // ************************************ 3 užduotis ********************************
+
+        function capitalize(name, last_name) {               // i funkcija capitalize priimam varda ir pavarde
+            let nameLetter = name[0].toUpperCase();          // istraukiam pirma vardo raide ir pakeiciam didziaja
+            let surnameLetter = last_name[0].toUpperCase();  // istraukiam pirma pavardes raide ir pakeiciam didziaja
+
+            name = nameLetter + name.slice(1);
+            last_name = surnameLetter + last_name.slice(1);
+
+            console.log(name, last_name);
+            document.write(name, last_name);
+            return name + ' ' + last_name;
+        }
+        capitalize('nerijus ', 'baležentis <br/>');
+
+        document.write('<h2>Ketvirta užduotis</h2><br/>');
+
+        console.log('************************* 4 užduotis ********************************');
+        // ************************************ 4 užduotis ********************************
+
+
+        function numberString() {
+
+            let kiekis = 3;
+            let min = 0;
+            let max = 5;
+            let string = '';
+            for (let i = 0; i < kiekis; i++) {
+                let number = rand(min, max);
+                console.log('generuotas', i + 1, 'skaičius -', number);
+                if (i === 0) {
+                    string += number;
+                } else {
+                    string += ', ' + number;
+                }
+            }
+            console.log(string);
+            return string;
+            
+        }
+        document.write('Sugeneruotų skaičių eilutė - ', numberString(), '<br/>')
+       
+
+
+        document.write('<h2>Penkta užduotis</h2><br/>');
+
+        console.log('************************* 5 užduotis ********************************');
+        // ************************************ 5 užduotis ********************************
+
+        function FromToLimit(from , to, limit) {
+            
+            const array5 = []; 
+
+            if(Number.isInteger(from) && Number.isInteger(to) && Number.isInteger(limit)) { // tikrinam ar skaiciai integer
+                for(let i = 0; i < limit; i++) {
+                    let x = rand(from, to); // generuojama atsitiktinė reikšmė pagal nurodytas skaitines ribas 
+                    array5.push(x); // push x to masyvas, pliusuojame reikšmes iki limit ilgio
+                    x++;
+                }
+                console.log(from, to, limit);
+                document.write('from -', from, '<br/>to - ', to, '<br/>limit - ', limit);
+                console.log('Sugeneruotas masyvas - ', array5);
+                document.write('<h3>Sugeneruotas masyvas - ', array5, '<br/> Masyvo ilgis - ', array5.length, '<h3/>');
+                
+            } else { // jeigu skaičius ne integer, metama klaida
+                alert('Number(s) is not an Integer!');
+                document.write('Error: Number is not an Integer!')
+            }
+            //return from, to, limit;
+        }
+
+        FromToLimit(1, 9, 25); // iškviečiama komanda su skaitinėmis reikšmėmis.
+
+    </script>
+</body>
+
+</html>

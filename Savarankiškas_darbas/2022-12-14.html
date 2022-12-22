@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savarankiškas darbas 2022-12-14</title>
+</head>
+
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // *****************************************************************************
+        console.log('************************* (FUNCTIONS ) 1 užduotis *************************');
+        document.write('<h4>************************* (FUNCTIONS ) 1 užduotis ************************* <h4/>');
+        
+        // Sukurkite funkciją kuri pakeltų paduotą skaičių n laipsniu, ir 
+        // grąžintų reikšmę (perduodami du parametrai: skaičius ir laipsnis).
+
+
+        function nLaipsniu(number1, nLaipsnis) {
+            let number2 = 0;
+            number2 = Math.pow(number1, nLaipsnis)
+
+            console.log('Skaičių', number1, 'pakėlus laipsniu -', nLaipsnis, ' Rezultatas: ', number2);
+            document.write('Skaičių ', number1, ' pakėlus laipsniu - ', nLaipsnis, '<br/> Rezultatas: ', number2, '<br/> ');
+            return number1;
+        }
+
+        nLaipsniu(3, 3); // iškviečiama funkcija su parametrais
+
+        // *****************************************************************************
+
+        console.log('************************* (FUNCTIONS ) 2 užduotis *************************');
+        document.write('<h4>************************* (FUNCTIONS ) 2 užduotis ************************* <h4/>');
+        
+        // Parašykite funkciją, kurios parametras būtų tekstas, kuris yra įterpiamas į h1 tagą. 
+        // Rezultatą atvaizduokite naršyklėje.
+
+        function uzduotis2(stringasH1) {
+            document.write('<h1>', stringasH1, '<h1/>');
+            console.log('Išvedama į naršyklės langą');
+        }
+
+        uzduotis2('function (<i>parameter</i>) to Heading 1');
+
+        // *****************************************************************************
+        console.log('************************* (FUNCTIONS ) 3 užduotis *************************');
+        document.write('<h4>************************* (FUNCTIONS ) 3 užduotis ************************* <h4/>');
+        
+        // Parašykite funkciją su dviem parametrais. Pirmasis yra tekstas, įterpiamas į h tagą, 
+        // o antrasis tago numeris (1-6). Rašydami šią funkciją remkitės antrame uždavinyje parašyta funkcija.
+
+        const uzduotis3 = (stringas, size3) => {                      // function arrow priskyrimo tipas
+
+            document.write('<h', size3, '>', stringas, size3, '<h', size3, '/>');
+            console.log('Išvedama į naršyklės langą');
+        }
+
+        uzduotis3('function (<i>parameter</i>) to Heading ', 1);
+        uzduotis3('function (<i>parameter</i>) to Heading ', 2);
+
+        // ***************************************************************************** 
+
+        console.log('************************* (FUNCTIONS ) 4 užduotis *************************');
+        document.write('<h4>************************* (FUNCTIONS ) 4 užduotis ************************* <h4/>');
+           
+        // Aprašykite funkciją kuri priimtų vieną parametrą "number" bei patikrintų ar duotas 
+        // skaičius yra pirminis. Atgal grąžinkite teigiamą arba neigiamą (boolean) atsakymą.
+
+        const uzduotis4 = (number4) => {
+            for (i = 2; i < number4; i++) {
+                if (number4 % i === 0) {
+                    return false
+                }
+            }
+            return true;
+        }
+        // console.log(uzduotis4(6));
+        document.write(uzduotis4(4));
+
+
+        // ***************************************************************************** 
+
+        console.log('************************* (FUNCTIONS ) 5 užduotis *************************');
+        document.write('<h4>************************* (FUNCTIONS ) 5 užduotis ************************* <h4/>');
+
+        //  Sugeneruokite 100 elementų masyvą kurio reikšmės atsitiktiniai skaičiai nuo 997 iki 15991. 
+
+        const uzduotis5array = (ilgis, from, to) => {
+            const array5uzd = [];
+            for(let i = 0; i < ilgis; i++) {
+                let x = rand(from, to);
+                array5uzd.push(x);
+            }
+            return array5uzd;
+        }
+        document.write(uzduotis5array(100, 997, 15991));
+        console.log(uzduotis5array(100, 997, 15991));
+
+         // ***************************************************************************** 
+
+         console.log('************************* (FUNCTIONS ) 6 užduotis *************************');
+        document.write('<h4>************************* (FUNCTIONS ) 6 užduotis ************************* <h4/>');
+
+        //  Sugeneruokite 100 elementų masyvą kurio reikšmės atsitiktiniai skaičiai nuo 997 iki 15991. 
+        
+        const uzduotis6array = (limit6) => {
+            const array6uzd = [];
+            const array5uzd = [];
+            for(let i = 0; i < uzduotis5array(100, 997, 15991).length; i++) {
+                console.log(uzduotis5array().length);
+                if(array5uzd[i] > limit6) {
+                    array6uzd.push(array5uzd[i]);
+                }
+                //let x = rand(from, to);
+                //array6uzd.push(x);
+            }
+            return array6uzd;
+        }
+        // document.write(uzduotis6array(100, 997, 15991));
+        console.log(uzduotis6array(5000));
+
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // rand funkcijos kodas
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        document.write('<h2>2022-12-08</h2>');
+        document.write('<h3 style="color: green;">Užduotis 1</h3>');
+        document.write('<h4 style="line-height: 20px">1. Kazys ir Petras žaidžiai šaškėm. </h4>');
+
+        // Kazys ir Petras žaidžiai šaškėm. 
+        // Petras surenka taškų kiekį nuo 10 iki 20, Kazys surenka taškų kiekį nuo 5 iki 25. 
+        // Vienoje eilutėje išvesti žaidėjų vardus su taškų kiekiu ir “Partiją laimėjo: ​laimėtojo vardas​”. 
+        // Taškų kiekį generuokite funkcija ​rand()​. Žaidimą laimi tas, kas greičiau surenka 222 taškus. 
+        // Partijas kartoti tol, kol kažkuris žaidėjas pirmas surenka 222 arba daugiau taškų.
+        let PetraPoint = 0;
+        let KazyPoint = 0;
+
+        let total = 222;
+
+        for (let i = 0; i < total; i++) {
+            let xpeter = rand(10, 20);
+            let xkazy = rand(5, 25);
+            PetraPoint += xpeter;
+            KazyPoint += xkazy;
+            if (PetraPoint > total || KazyPoint > total) {
+                break;
+            }
+        }
+
+        document.write('<span style="color:red">Petro taškai - ', PetraPoint, '</span> ir va nu va  ', '<span style="color:blue">Kazio taškai -', KazyPoint, '</span><br/><br/>');
+        console.log('Petro taškai - ', PetraPoint, 'Kazio taškai -', KazyPoint);
+
+        if (PetraPoint > KazyPoint) {
+            document.write('<span style="color:red">Laimėjo Petras - ', PetraPoint, '</span>');
+            console.log('Laimėjo Petras - ', PetraPoint);
+        } else if (PetraPoint === KazyPoint) {
+            document.write('<span style="color:green"><b>Lygiosios - </span>', 'Petro taškai - ', PetraPoint, '= ', 'Kazio taškai -', KazyPoint, '<b/>');
+            console.log('Lygiosios - ', 'Petro taškai - ', PetraPoint, '= ', 'Kazio taškai -', KazyPoint);
+        } else {
+            document.write('<span style="color:blue">Laimėjo Kazys - ', KazyPoint, '</span>');
+            console.log('Laimėjo Kazys - ', KazyPoint);
+        }
+        // ****************************** 2 uzduotis *******************************************
+
+        document.write('<h3 style="color: green;">Užduotis 2</h3>');
+        document.write('<h4 style="line-height: 20px">Kalu cvieką </h4>');
+        // Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite pasinaudodami rand() funkcija.
+        // Vinies ilgis 8.5cm (pilnai sulenda į lentą).
+        // “Įkalkite” 5 vinis mažais smūgiais. Vienas smūgis vinį įkala 5-20 mm. 
+        // Suskaičiuokite kiek reikia smūgių.
+
+        console.log('****************** 2 uzduotis ***************');
+        let smugiuSkaicius = 0; // smugiu skaicius
+        let nailLength = 85; // vinies ilgis, (mm)
+        let viniuKiekis = rand(0, 5); // viniu
+        let s = 0;
+        let gylis = 0;
+        let totalGylis = 0;
+        let sukalimoGylis = nailLength * viniuKiekis;
+        let tekstas = 'Duok vinių!'
+        let duok = tekstas.toUpperCase();
+
+        if (viniuKiekis > 0) {
+            do {
+                gylis = rand(20, 30); // milimetru
+                let tikimybe = rand(0, 1); // tikimybe kad pataiko i vini yra 50%
+                console.log('tikimybe', tikimybe);
+                if (tikimybe > 0) {
+                    totalGylis += gylis; // prie bendro gylio pridedu smugio gyli
+                    s++; // smugiu skaicius
+                } else {
+                    s++; // smugis buvo norsi vini nepataike
+                }
+            } while (totalGylis < sukalimoGylis);
+        } else {
+            console.log('!!!!!!!!!!!!!', duok, '!!!!!!!!!!!!');
+            document.write('!!!!!!!!!!!!!', duok, '!!!!!!!!!!!! viniuKiekis = 0; <br/><br/>')
+        }
+
+        console.log(viniuKiekis, 'vnt. - 8,5 cm ilgio vinims sukalti reikėjo - ', s, 'smūgių');
+        document.write(viniuKiekis, 'vnt. - 8,5 cm ilgio vinims sukalti reikėjo - ', s, ' smūgių');
+
+        console.log('****************** 3 uzduotis ***************');
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

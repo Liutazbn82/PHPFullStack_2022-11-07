@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friday challenge_2022-12-09</title>
+    <style>
+        body {
+            justify-content: center;
+            margin: auto;
+            width: 90%;
+        }
+        
+    </style>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // ************************ Užduotis Nr. 1. ************************
+        document.write('<h3>Užduotis Nr. 1</h3>')
+        // Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, 
+        // o ilgis 200. Suskaičiuokite kiek yra kiekvienos raidės.
+
+        let int = 0;
+        let array = [];
+        const arrayA = [];
+        const arrayB = [];
+        const arrayC = [];
+        const arrayD = [];
+        const arrayL= [];
+        const masyvoIlgis = 200;
+        let temp = 0;
+
+        for (let i = 0; i < masyvoIlgis ; i++) {
+            int = rand(0, 3); // generuoju atsitiktinį skaičių nuo tarp 0 ir 3;
+            array.push(' '+int);
+            // Pagal sugeneruotą skaičių iš karto rašau į masyvą raidę;
+            if (int === 0) { arrayL.push(' A'); }
+            else if (int === 1 ) { arrayL.push(' B'); }
+            else if (int === 2 ) { arrayL.push(' C'); }
+            else arrayL.push(' D');
+            // Iš karto skirtomas raidžių masyvas ne sort()
+            if (int === 0) { arrayA.push(' A'); }
+            else if (int === 1 ) { arrayB.push(' B'); }
+            else if (int === 2 ) { arrayC.push(' C'); }
+            else arrayD.push(' D');
+
+        }
+
+        document.write('<p> Sugeneruotas masyvas (200): <br/><span style="color: brown;">' + array + '</span> <br/></p>');
+        document.write('<p> Sugeneruotas masyvas (200): <br/><span style="color: ;">' + arrayL + '</span> <br/></p>');
+        document.write('<p> Masyvuose sugeneruotų raidžių kiekis:','<br/>','A - ', arrayA.length,',<br/>', ' B - ', arrayB.length,',<br/>',' C - ', arrayC.length,',<br/>',' D - ', arrayD.length,'<br/></p>');
+
+        document.write('<p> A - kiekis: ',arrayA.length, '<br/><span style="color: red;">' + arrayA + '</span> <br/></p>');
+        document.write('<p> B - kiekis: ',arrayB.length, '<br/><span style="color: blue;">' + arrayB + '</span> <br/></p>');
+        document.write('<p> C - kiekis: ',arrayC.length, '<br/><span style="color: green;">' + arrayC + '</span> <br/></p>');
+        document.write('<p> D - kiekis: ',arrayD.length, '<br/><span style="color: violet;">' + arrayD + '</span> <br/></p>');
+        // Antra užduotis ******************************************************************
+        document.write('<h3>Užduotis Nr. 2</h3>')
+
+        // išrūšiuoju su sort()
+        arrayL.sort();
+        document.write('<p style="color: red;"> Išrūšiuotas pagal abėcėlę masyvo turinys <i><b>sort()</b></i>: <br/>', arrayL, '</p>');
+
+        // sujungiu ABCD archyvus į vieną.
+        array = arrayA.concat(arrayB, arrayC, arrayD);
+        document.write('<p style="color: blue;"> Sujungtas ABCD masyvų turinys <i><b>concat()</b></i>: <br/>', array, '</p>');
+
+        document.write('<h3>Užduotis Nr. 3</h3>')
+
+        // let a = 0;
+        // for (let i=0; i < array1.length; i++) {
+        //     if (array1(i) = 'A') {a++;
+        //     console.log(a);}
+
+
+        // }
+        // do {
+
+        // } while (arrayA.length(max))
+        // array.sort();
+        // console.log(array)
+        //console.log(array1)
+    </script>
+</body>
+</html>

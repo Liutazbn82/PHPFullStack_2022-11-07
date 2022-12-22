@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friday challenge_2022-12-09</title>
+    <style>
+        body {
+            justify-content: center;
+            margin: auto;
+            width: 90%;
+        }
+        
+    </style>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // ************************ Užduotis Nr. 1. ************************
+        document.write('<h3>Užduotis Nr. 1</h3>')
+        // Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, 
+        // o ilgis 200. Suskaičiuokite kiek yra kiekvienos raidės.
+
+        const stringas = 'ABCD';
+        const pirmasMasyvas = [];
+        const antrasMasyvas = [];
+        const treciasMasyvas = [];
+
+        for(let i = 0; i < 200; i++) {
+            // const raide = stringas[rand(0, 3)];
+            // deklaruotas kint. raide lygus const stringas[rand(masyvo indeksas)];
+            let raide = stringas[rand(0, 3)];
+            // jeigu nezinom masyvo ilgio tai galima nurodyt const raide = stringas[rand(0, stringas.length -1)];
+        
+            pirmasMasyvas.push(raide); // push(raide) į pirmasMasyvas
+
+            raide = stringas[rand(0, stringas.length -1)]; // atsitiktinis masyvo indeksas kuris nurodys stringas poziciją.
+            antrasMasyvas.push(raide); // push(raide) į antrasMasyvas
+
+            raide = stringas[rand(0, stringas.length -1)];
+            treciasMasyvas.push(raide); // push(raide) į treciasMasyvas
+
+
+        }
+
+        // sugeneravom 3 masyvus kad paimti tris raides iš vienodo indekso kiekviename masyve ir jas sujungti.
+        // console.log(pirmasMasyvas);
+       // console.log(antrasMasyvas);
+       // console.log(treciasMasyvas);
+        //document.write(pirmasMasyvas);
+
+        const masyvas = []; // deklar. papildomas masyvas sujungtom raidem
+
+        for (let i=0; i< pirmasMasyvas.length; i++) { // sukam ciklą pagal masyvo ilgį.
+            // į naują masyvą sudedam iš trijų masyvų sugeneruotas 
+            // raides pagal tą pačia vietą masyve (indeksą i)
+            masyvas.push(pirmasMasyvas[i] + antrasMasyvas[i] + treciasMasyvas[i]);
+        }
+        console.log(masyvas);
+     
+    </script>
+</body>
+</html>

@@ -17,23 +17,28 @@
 
 
     <script>
+        // rand funkcijos kodas
         function rand(min, max) {
             min = Math.ceil(min);
             max = Math.floor(max);
             return Math.floor(Math.random() * (max - min + 1) + min);
         }
-        
-        document.write('<h2>2022-12-06</h2>'); 
-        document.write('<h3>Užduotis 1, 2 </h3>'); 
-        document.write('<h4 style="line-height: 20px">1. Nupieškite kvadratą iš “*”, kurio kraštines sudaro 100 “*”. Panaudokite css stilių, kad kvadratas ekrane atrodytų kvadratinis.</h4>'); 
-        document.write('<h4 style="line-height: 20px">2. Prieš tai nupieštam kvadratui nupieškite raudonas istrižaines. <br/></h4>'); 
+
+        document.write('<h2>2022-12-06</h2>');
+        document.write('<h3 style="color: blue;">Užduotis 1, 2 </h3>');
+        document.write('<h4 style="line-height: 20px">1. Nupieškite kvadratą iš “*”, kurio kraštines sudaro 100 “*”. Panaudokite css stilių, kad kvadratas ekrane atrodytų kvadratinis.</h4>');
+        document.write('<h4 style="line-height: 20px">2. Prieš tai nupieštam kvadratui nupieškite raudonas istrižaines. <br/></h4>');
+       
+        // užduotis 1 ir 2
+        // Nupieškite kvadratą iš “*”, kurio kraštines sudaro 100 “*”. 
+        // Panaudokite css stilių, kad kvadratas ekrane atrodytų kvadratinis.
 
         const size = 11;
         let result = '';
-        
-        for(let y = 1; y <= size; y++) {
-            for(let x = 1; x <= size; x++ ) {
-                if(y === x || x === (size - y) + 1 ) {
+
+        for (let y = 1; y <= size; y++) {
+            for (let x = 1; x <= size; x++) {
+                if (y === x || x === (size - y) + 1) {
                     result += '<span style="color: red;">*</span>';
                 } else {
                     result += '<span style="color: lightblue;">*</span>';
@@ -43,51 +48,217 @@
         }
         document.write(result);
 
-        document.write('<h3>Užduotis 3</h3>'); 
+        document.write('<h3 style="color: blue;">Užduotis 3</h3>');
         document.write('<h4 style="line-height: 20px">Metam monetą. Monetos kritimo rezultatą imituojam rand() funkcija, kur 0 yra herbas, o 1 - skaičius. Monetos metimo rezultatus išvedame į ekraną atskiroje eilutėje: “S” jeigu iškrito skaičius ir “H” jeigu herbas. Suprogramuokite tris skirtingus scenarijus kai monetos metimą stabdome:</h4>');
+        
+        // Metam monetą. Monetos kritimo rezultatą imituojam rand() funkcija, 
+        // kur 0 yra herbas, o 1 - skaičius. Monetos metimo rezultatus išvedame 
+        // į ekraną atskiroje eilutėje: “S” jeigu iškrito skaičius ir “H” jeigu herbas. 
+        // Suprogramuokite tris skirtingus scenarijus kai monetos metimą stabdome:
             //Iškritus herbui;
             //Tris kartus iškritus herbui;
             //Tris kartus iš eilės iškritus herbui;
 
+        const coin = [];
+        let c = 0;
+        let h = 0;
+        let s = 0;
+        do {
+            c = rand(0, 1);
+            console.log('c', c);
+            if(c === 0) {
+                document.write('<p style="color: red"> <b>S</b>');
+                coin.push('S');
+                s++;
+            } else {
+                document.write('<p style="color: green"> <b>H</b>');
+                coin.push('H');
+            }
+            h++; //coin.push(c);
 
-
-
-
-        document.write('<h3>Užduotis 4</h3>'); 
+        } while (h < 3);
+        console.log("coin", coin);
+    
+        document.write('<h3 style="color: blue;">Užduotis 4</h3>');
         document.write('<h4 style="line-height: 20px">Sugeneruokite masyvą iš 30 elementų (indeksai nuo 0 iki 29), kurių reikšmės yra atsitiktiniai skaičiai nuo 5 iki 25.</h4>');
-        
-        // 4 UZDUOTIS
 
-        const treciasMasyvas =[];
-        for(let i = 0; i < 30; i++) {
-            treciasMasyvas[i] = rand(5, 25);
+        /* // 4 UZDUOTIS
+
+        const array3 = array5 = [];
+        for (let i = 0; i < 30; i++) {  
+            array3[i] = rand(5, 25);
 
         }
-        document.write(treciasMasyvas);
-        
+        document.write('<h3 style="color: blue;">Užduotis 5.b</h3>');
+        document.write('Masyvas - ', array3);
+        const array3clone = structuredClone(array3);
+
+
+        console.log('********** 4.b ***********');
         // masyvo tikrinimas, kiek masyve reiksmiu > 10;
 
         let counter = 0;
         let max = 0;
         let indexes = [];
+        let sum = 0;
 
-        for(let i = 0; i < treciasMasyvas.length; i++) {
-            if(treciasMasyvas[i] > 10)
+        for (let i = 0; i < array3.length; i++) {
+            if (array3[i] > 10)
                 counter++;
 
-            if(treciasMasyvas[i] > max )
-                max = treciasMasyvas[i];
+            if (array3[i] > max)
+                max = array3[i];
 
-            if(treciasMasyvas[i] === max ) {
+            if (array3[i] === max) {
                 indexes[indexes.length] = i; // indexes.length bus talpinama indexo reiksme. 
-            }
-        }
 
-        console.log(max);
+            }
+            // if(array3[i] % 2 === 0) // sum += array3[i]; //console.log('i - ', i);
+        }
+        console.log('********** 4.c ***********');
+        document.write('<h3 style="color: blue;">Užduotis 5.c<br/></h3>');
+
+
+        console.log('max reikšmė -', max);
+        console.log('suma', sum);
+
+
+        const oddEvenDifference = (array3 = []) => {
+            let oddSum = 0;
+            let evenSum = 0;
+
+            for (let i = 0; i < array3.length; i++) {
+                const el = array3[i];
+
+                if (i % 2 === 0) {
+                    evenSum += el;
+                } else {
+                    oddSum += el;
+                };
+            };
+            return 'Lyginiu suma: ' + evenSum + ' Nelyginiu suma: ' + oddSum;
+        };
+
+        console.log(oddEvenDifference(array3));
         // console.log(counter);
 
+        let oddSum = 0;
+        let evenSum = 0;
 
+        for (let i = 0; i < array3.length; i++) {
+            const el = array3[i];
 
+            if (i % 2 === 0) {
+                evenSum += el;
+            } else {
+                oddSum += el;
+            };
+
+        };
+
+        console.log('********** 4.d ***********');
+        // 4.d uzduotis
+        // Sukurkite naują masyvą, kurio reikšmės yra 
+        // 1 uždavinio masyvo reikšmes minus tos reikšmės indeksas;
+
+        document.write('<h4>Lyginiu suma: ' + evenSum + '<br/><br/><br/>', ' Nelyginiu suma: ' + oddSum, '</h4>');
+
+        document.write('<h3 style="color: blue;">Užduotis 5.d</h3>');
+        console.log(array3)
+        const array4 = [];
+        for (let i = 0; i < array3.length; i++) {
+            array4.push((array3[i] - i));
+        }
+        document.write('<h4>Sugeneruotas masyvas - ', array3, '</h4>');
+        document.write('<h4>Iš masyvo reikšmės atėmus indekso numerį-  <br/><br/><br/>', array4, '<h4>');
+        // console.log('array4 - ', array4)
+
+        console.log('********** 4.e ***********');
+
+        // 4.e uzduotis
+        // Papildykite masyvą papildomais 10 elementų su reikšmėmis nuo 5 iki 25, 
+        // kad bendras masyvas padidėtų iki indekso 39;
+
+        document.write('<h3 style="color: blue;">Užduotis 5.e</h3>');
+        // let temp = 0;
+        //const array3 = [];
+        for (i = array3.length; i < 39; i++) {
+            const temp10 = rand(5, 25);
+            //console.log('temp', temp);
+            array3.push(temp10);
+        }
+        console.log('<h4>Papildytas 10 reikšmių, masyvas - ', array3);
+        document.write('<h4>Papildytas 10 reikšmių, masyvas - </h4>');
+        document.write(array3);
+
+        document.write('<h3 style="color: blue;">Užduotis 5.f</h3>');
+        // Iš masyvo elementų sukurkite du naujus masyvus. 
+        // Vienas turi būti sudarytas iš neporinių indeksų reikšmių, o kitas iš porinių;
+
+        console.log('********** 4.f ***********');
+
+        let lyginis = [];
+        let nelyginis = [];
+        //let el = 0;
+
+        for (let i = 0; i < array3.length; i++) {
+            const el = array3[i];
+
+            if (el % 2 === 0) {
+                lyginis.push(el);
+
+            } else {
+                nelyginis.push(el);;
+            };
+        }
+        console.log('Lyginis - ', lyginis);
+        console.log('Nelyginis -', nelyginis);
+        document.write('<h4>Lyginiai skaičiai - ', lyginis, '<br/></h4>');
+        document.write('<h4>Nelyginiai skaičiai - ', nelyginis, '</h4>');
+
+        console.log('********** 4.g ***********');
+
+        document.write('<h3 style="color: blue;">Užduotis 5.g</h3>');
+        // Pirminio masyvo elementus su poriniais indeksais 
+        // padarykite lygius 0 jeigu jie didesni už 15;
+        let g = 0;
+        console.log('Masyvas', array3)
+        for (let i = 0; i < array3.length; i++) {
+            const value = array3[i];
+
+            if (i % 2 === 0) {
+                console.log('lyginis - ', i, '-', value);
+                if (value > 15) {
+                    array3[i] = 0;
+                }
+            } else {
+                // nelyginis.push(value);
+                //console.log('nelyginis', value);
+            };
+        }
+        console.log('po', array3)
+        document.write('<h4> Pakeitus porinio indekso reiksmes 0 jeigu (vertė > 15 ) -</h4><br/>', array3, '</h4>')
+
+        console.log('********** 5.h ***********');
+
+        document.write('<h3 style="color: blue;">Užduotis 5.h</h3>');
+
+        // 5.g
+        // Iš masyvo ištrinkite visus elementus, kurių reikšmė didesnė už 10;
+
+        // console.log('Masyvas', array3)
+        const darvienas = [];
+        console.log('clone', array3clone);
+        for (let i = 0; i < array3clone.length; i++) {
+            const element = array3clone[i];
+            if(element >10) {
+                darvienas.push(element);
+            }
+        };
+
+        document.write('<h4>Filtruojamas masyvas - </h4>', array3clone);
+        document.write('<h4>Didesnės nei 10 reikšmės masyve - </h4>', darvienas);
+        */
 
     </script>
 </body>
