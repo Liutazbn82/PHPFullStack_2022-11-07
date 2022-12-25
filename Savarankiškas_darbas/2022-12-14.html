@@ -83,7 +83,7 @@
             return true;
         }
         // console.log(uzduotis4(6));
-        document.write(uzduotis4(4));
+        document.write(uzduotis4(6132));
 
 
         // ***************************************************************************** 
@@ -109,25 +109,26 @@
          console.log('************************* (FUNCTIONS ) 6 užduotis *************************');
         document.write('<h4>************************* (FUNCTIONS ) 6 užduotis ************************* <h4/>');
 
-        //  Sugeneruokite 100 elementų masyvą kurio reikšmės atsitiktiniai skaičiai nuo 997 iki 15991. 
+        //  Pasinaudodami ketvirtoje užduotyje aprašyta funkcija masyve palikite tik 
+        // pirminius skaičius, kurie yra didesni nei 5000;
         
         const uzduotis6array = (limit6) => {
             const array6uzd = [];
-            const array5uzd = [];
-            for(let i = 0; i < uzduotis5array(100, 997, 15991).length; i++) {
-                console.log(uzduotis5array().length);
-                if(array5uzd[i] > limit6) {
-                    array6uzd.push(array5uzd[i]);
+            const array5uzd = uzduotis5array(100, 997, 15991);
+            console.log('sugeneruotas masyvas -', array5uzd);
+            console.log('masyvo ilgis', array5uzd.length);
+            for(let i = 0; i < array5uzd.length; i++) {
+                let v = array5uzd[i];
+                if(uzduotis4(array5uzd[i]) === true && v > limit6) {
+                    array6uzd.push(v);
                 }
-                //let x = rand(from, to);
-                //array6uzd.push(x);
             }
             return array6uzd;
         }
-        // document.write(uzduotis6array(100, 997, 15991));
-        console.log(uzduotis6array(5000));
-
         
+        document.write('Masyve palikti tik didesni nei 5000 pirminiai skaičiai - ', '<h3 style="color: blue">', uzduotis6array(5000), '<h3/>');
+        // console.log(uzduotis4(49));
+       
     </script>
 </body>
 

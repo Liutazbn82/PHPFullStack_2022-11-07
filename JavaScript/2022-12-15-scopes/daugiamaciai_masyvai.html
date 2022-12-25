@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daugiamačiai masyvai</title>
+</head>
+<body>
+    <script>
+        const masyvas = [ 
+            // level1 start
+            [   // level 2 start [
+                [   // level 3 start
+                    10,
+                    20,
+                    30
+                ],  // level3 end
+                    
+                [   // level3 start
+                    'Pirmas', 'Stalas', 'Trečias'
+                ],  // level3 end
+                // level 3 start [
+                [true, false, true],// level3 end. ]
+                // level3 start [
+                [null, null, null], // level3 end. ]
+            ],  // level2 end. ]
+            'Stalas',
+            [],
+            [],
+            [],
+        ];  // level1 end.
+
+        // console.log(masyvas);
+        // console.log(masyvas[0][1][1]);
+
+        // Paleidžiamas paieškos ciklas. *********************************************************
+
+        for(const level1 in masyvas) { // level1 yra tik pavadinimas
+            if(masyvas[level1] === 'Stalas') // ieskome masyve reiksmes stalas
+                console.log('1 lygis','Radome reikšmę Stalas');
+
+            // Paleidžiamas ciklas, pirmojo ciklo cikle. ******************************
+
+            for(const level2 in masyvas[level1]) { // level2 yra pavadinimas
+                if(masyvas[level1][level2] === 'Stalas') // Stalas yra reiksme
+                    console.log('2','Radome reikšmę Stalas');
+
+                // Paleidžiamas ciklas, antrojo ciklo cikle. ****************************
+
+                for(const level3 in masyvas[level1][level2]) {
+                    // console.log('3', masyvas[level1][level2][level3]);
+                    if(masyvas[level1][level2][level3] === 'Stalas')
+                        //console.log('3 lygis','Radome reikšmę Stalas')
+                        masyvas[level1][level2][level3] = 'Kėdė';
+                }
+            }
+        }
+       
+        // jeigu žinome vietą kur yra reikšmė
+        for(const object of masyvas[0][1]) {
+            console.log(object);
+        }
+
+        console.log(masyvas);
+
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+
+        console.log('Užduotis');
+
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+
+        const string = 'abcdefghijklmnopqrstuvwxyz';
+        const generatedArray = [];
+
+        for(let i = 0; i < 10; i++) {
+            
+            const count = rand(2, 20);
+             // console.log('pirmo lygio masyvo elementas', i);
+            generatedArray[i] = [];
+
+            for(let x=0; x < count; x++) {
+                console.log('antro lygio masyvo generavimas');
+                const letter = string[rand(0, string.length - 1)];
+                // console.log(generatedArray);
+                generatedArray[i].push(letter);
+            }
+            generatedArray[i].sort();
+        }
+        console.log(generatedArray);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scopes paskaita</title>
+</head>
+<body>
+    <!-- 
+    <script>
+        // Global Scope - {} *******************************************
+        const user = 'Eglė';
+    </script>    
+    <script>    
+        const email = 'egle@gmail.com';
+    </script>
+    <script src="external.js"></script> -->
+
+    <script>
+        let modified_user = 'Algirdas';
+        // Function scope - {} *******************************************
+        function test() {
+            const user = 'Eglė';
+            modified_user = 'Juozas';  
+        }
+        
+        {
+            // Block scope įeina ciklai (if, for, while, switch) ir pan.
+        }
+
+        if(true) { // Block scope
+            const user = 'Petras';
+            let email = 'petras@gmail.com'
+            console.log(user);
+        }
+        console.log(user, email);
+
+    </script>
+</body>
+</html>
