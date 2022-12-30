@@ -1,12 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Objektai</title>
 </head>
+
 <body>
-    
+    <script>
+        const masyvas = [10, 20, 30];
+        // console.log(masyvas);
+
+        // // Objekto sintaksė (pradžia)
+        // const person = {
+        //     name: 'Peter', // Property - savybe
+        //     surname: 'Smith', // Property - savybe
+        //     likes: ['Bėgiojimas, Šachmatai, Apsipirkimai'],
+        //     hello: function(text) {    // funkcija aprašyta objekte, vadinasi Method
+        //         return 'Hello ' + text;
+        //     }
+
+        // } // Objekto aprašymo sintaksės (pabaiga)
+
+        // console.log(person.name.toUpperCase());
+        // console.log(person.surname);
+        // console.log(person.hello('Adamas su 1 sandalu'));
+        // console.log(person.likes.join(','));
+
+
+        // Objekto sintaksė (pradžia)
+        const person = {
+            name: 'Peter', // Property - savybe
+            surname: 'Smith', // Property - savybe
+            likes: ['Bėgiojimas, Šachmatai, Apsipirkimai'],
+            getName: function () {    // funkcija aprašyta objekte, vadinasi Method
+                // this nurodo kreipimasi i objektąkuriame randasi metodas
+                // arrow funkcija savyje neturi raktinio zodzio this.
+                console.log(this);
+                return this.name;
+            },
+            setName: function (name) {
+                this.name = name;
+                return 'Naujas vardas yra: ' + this.name;
+            }
+
+        } // Objekto aprašymo sintaksės (pabaiga)
+
+        person.name = 'John';
+        console.log(person.getName());
+        console.log(person.setName('Adomas'));
+        person.name = 'Aleksandra';
+
+        person.getLikes = function() {
+            return this.likes.join(',');
+        }
+
+        console.log(person);
+        console.log(person.getLikes());
+
+    </script>
 </body>
+
 </html>

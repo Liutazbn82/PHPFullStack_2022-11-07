@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Document Object Model</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background: blue;
+        }
+
+        #app .box {
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+        <!-- <h1>Statiškai priskirtas turinys</h1>-->
+    <script>
+        // ************************DOM - Document Object Model **************************
+
+        // DOM Manipouliacija
+        // document.write('<h1>Testas</h1>'); - paprastas būdas atspausdinti eilutę HTML.
+        // getElementById() metodas suranda elementą pagal ID atributą.
+        // innerHTML savybė, leidžia pridėti html turinį į elementą.
+        document.getElementById('app').innerHTML += '<h2>Dinamiškai integruotas turinys</h2>';
+        document.getElementById('app').innerHTML += '<h3>Dinamiškai pridėta antra eila</h3>';
+
+        // innerText savybė skirta priskirti tekstą, HTML turinys negeneruojamas.
+        document.getElementById('app').innerHTML = '<h1>Naudojamės innerText savybe</h1>';
+        document.getElementById('app').textContent = '<h1>Naudojamės textContent savybe</h1>';
+
+
+        // console.log(document.getElementById('app').innerHTML);
+
+        document.getElementById('app').innerHTML = '<div class="box">x</div>';
+        
+        // querySelector metodas leidžia ieškoti elementų naudojantis css sintaksėskreipiniu
+        document.querySelector('#app .box').textContent = 'Sudie';
+
+        // panaikiname visą turinį body elemente
+        document.querySelector('body').innerHTML = '';
+        
+        
+        </script>
+</body>
+
+</html>

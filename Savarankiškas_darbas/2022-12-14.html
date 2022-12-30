@@ -19,7 +19,7 @@
         // *****************************************************************************
         console.log('************************* (FUNCTIONS ) 1 užduotis *************************');
         document.write('<h4>************************* (FUNCTIONS ) 1 užduotis ************************* <h4/>');
-        
+
         // Sukurkite funkciją kuri pakeltų paduotą skaičių n laipsniu, ir 
         // grąžintų reikšmę (perduodami du parametrai: skaičius ir laipsnis).
 
@@ -39,7 +39,7 @@
 
         console.log('************************* (FUNCTIONS ) 2 užduotis *************************');
         document.write('<h4>************************* (FUNCTIONS ) 2 užduotis ************************* <h4/>');
-        
+
         // Parašykite funkciją, kurios parametras būtų tekstas, kuris yra įterpiamas į h1 tagą. 
         // Rezultatą atvaizduokite naršyklėje.
 
@@ -53,7 +53,7 @@
         // *****************************************************************************
         console.log('************************* (FUNCTIONS ) 3 užduotis *************************');
         document.write('<h4>************************* (FUNCTIONS ) 3 užduotis ************************* <h4/>');
-        
+
         // Parašykite funkciją su dviem parametrais. Pirmasis yra tekstas, įterpiamas į h tagą, 
         // o antrasis tago numeris (1-6). Rašydami šią funkciją remkitės antrame uždavinyje parašyta funkcija.
 
@@ -70,7 +70,7 @@
 
         console.log('************************* (FUNCTIONS ) 4 užduotis *************************');
         document.write('<h4>************************* (FUNCTIONS ) 4 užduotis ************************* <h4/>');
-           
+
         // Aprašykite funkciją kuri priimtų vieną parametrą "number" bei patikrintų ar duotas 
         // skaičius yra pirminis. Atgal grąžinkite teigiamą arba neigiamą (boolean) atsakymą.
 
@@ -95,7 +95,7 @@
 
         const uzduotis5array = (ilgis, from, to) => {
             const array5uzd = [];
-            for(let i = 0; i < ilgis; i++) {
+            for (let i = 0; i < ilgis; i++) {
                 let x = rand(from, to);
                 array5uzd.push(x);
             }
@@ -104,31 +104,87 @@
         document.write(uzduotis5array(100, 997, 15991));
         console.log(uzduotis5array(100, 997, 15991));
 
-         // ***************************************************************************** 
+        // ***************************************************************************** 
 
-         console.log('************************* (FUNCTIONS ) 6 užduotis *************************');
+        console.log('************************* (FUNCTIONS ) 6 užduotis *************************');
         document.write('<h4>************************* (FUNCTIONS ) 6 užduotis ************************* <h4/>');
 
         //  Pasinaudodami ketvirtoje užduotyje aprašyta funkcija masyve palikite tik 
         // pirminius skaičius, kurie yra didesni nei 5000;
-        
+
         const uzduotis6array = (limit6) => {
             const array6uzd = [];
             const array5uzd = uzduotis5array(100, 997, 15991);
             console.log('sugeneruotas masyvas -', array5uzd);
             console.log('masyvo ilgis', array5uzd.length);
-            for(let i = 0; i < array5uzd.length; i++) {
+            for (let i = 0; i < array5uzd.length; i++) {
                 let v = array5uzd[i];
-                if(uzduotis4(array5uzd[i]) === true && v > limit6) {
+                if (uzduotis4(array5uzd[i]) === true && v > limit6) {
                     array6uzd.push(v);
                 }
             }
             return array6uzd;
         }
-        
+
         document.write('Masyve palikti tik didesni nei 5000 pirminiai skaičiai - ', '<h3 style="color: blue">', uzduotis6array(5000), '<h3/>');
         // console.log(uzduotis4(49));
+
+
+        console.log('************************* ( MASYVAI ) 1 užduotis *************************');
+        document.write('<h4>************************* ( MASYVAI ) 1 užduotis ************************* <h4/>');
+        // Sugeneruokite 10 skaičių masyvą pagal taisyklę:
+        // Du pirmi skaičiai- atsitiktiniai nuo 5 iki 25. Trečias, pirmo ir antro suma.
+        // Ketvirtas- antro ir trečio suma. Penktas trečio ir ketvirto suma ir t.t.
+
+        document.write('<h3>Sugeneruokite 10 skaičių masyvą</h3>');
+        const masyvas = [rand(5, 25), rand(5, 25)];
+
+        for (let i = 2; i < 10; i++) {
+            const res = masyvas[i - 2] + masyvas[i - 1];
+            masyvas.push(res);
+        }
+        console.log('Rezultatas atvaizduotas html dokumente.')
+
+        document.write(masyvas);
+
+
+        console.log('************************* ( MASYVAI ) 2 užduotis *************************');
+        document.write('<h4>************************* ( MASYVAI ) 2 užduotis ************************* <h4/>');
        
+        // Sukurkite masyvą iš 10 elementų. Kiekvienas masyvo elementas turi būti masyvas 
+        // su atsitiktiniu kiekiu nuo 2 iki 20 elementų. Elementų reikšmės atsitiktinai 
+        // parinktos raidės iš intervalo A-Z. Išrūšiuokite antro lygio masyvus pagal abėcėlę 
+        // (t.y. tuos kur su raidėm).
+
+        let arrayTotal = []
+        let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        let arrayM2 = []
+
+
+        for (let j = 0; j < 10; j++) {
+            let randElCount = rand(2, 20)
+
+            for (let i = 0; i < randElCount; i++) {
+                if (arrayM2.length < randElCount) {
+                    arrayM2[i] = alphabet[rand(0, alphabet.length - 1)]
+                }
+                if (arrayM2.length === randElCount) {
+                    arrayTotal.push(arrayM2.sort())
+                    arrayM2 = []
+                }
+            }
+        }
+        document.write('<h3>Sukurkite masyvą iš 10 elementų. Kiekvienas masyvo elementas turi būti masyvas su atsitiktiniu kiekiu nuo 2 iki 20 elementų. Elementų reikšmės atsitiktinai parinktos raidės iš intervalo A-Z. Išrūšiuokite antro lygio masyvus pagal abėcėlę (t.y. tuos kur su raidėm).</h3>')
+
+        for(let i = 0; i < 10; i++) {
+            document.write('Array -', i,' - <span style="color: red">' , arrayTotal[i], '</span><br/>');
+        }
+       
+         // console.log(arrayTotal);
+         // document.write(arrayTotal[i]);
+
+        
+
     </script>
 </body>
 
