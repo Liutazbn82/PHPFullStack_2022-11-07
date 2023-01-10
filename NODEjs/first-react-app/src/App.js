@@ -1,11 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 
+// Komponentas
 function App() {
+  // JSX sintaksė 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Tai mano pirmoji React aplikacija.
+        </p>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
