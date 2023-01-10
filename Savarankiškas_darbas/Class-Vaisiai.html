@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaisiai krepšyje</title>
+    <!-- <style>
+        body {
+            background: #baeeff;
+        }
+
+        #remote {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        #remote img {
+            max-width: 130%;
+            display: absolute;
+        }
+
+        #remote .button {
+            position: relative;
+            /* border: none;
+            background:none; */
+        }
+
+        #remote .power-button {
+            top: 177px;
+            left: 292px;
+            width: 33px;
+            height: 25px;
+        }
+
+        #remote .channel-up {
+            top: 226px;
+            left: 255px;
+            width: 33px;
+            height: 25px;
+        }
+
+        #remote .channel-down {
+            top: 226px;
+            left: 163px;
+            width: 33px;
+            height: 25px;
+        }
+
+        #remote .sound-up {
+            top: 275px;
+            left: 181px;
+            width: 33px;
+            height: 25px;
+        }
+
+        #remote .sound-down {
+            top: 275px;
+            left: 89px;
+            width: 33px;
+            height: 25px
+        }
+
+        #tv img {
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        #output {
+            position: absolute;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 220px;
+            height: 90px;
+            top: 180px;
+            left: 175px;
+            font-size: 20px;
+        }
+    </style> -->
+</head>
+
+<body>
+    <!-- <div id="tv">
+        <div id="output"></div>
+        <img src="tv.webp" alt="Telikas" />
+    </div>
+    <div id="remote">
+        <button class="button power-button"></button>
+        <button class="button channel-up"></button>
+        <button class="button channel-down"></button>
+        <button class="button sound-up"></button>
+        <button class="button sound-down"></button>
+        <img src="remote.jpg" alt="Elektrinės valdymo pultas" />
+    </div> -->
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+      
+        class Fruit {
+            constructor(size, id, status) {
+                // this.row = rowNumber;
+                this.size = rand(5, 25);
+                this.id = rand(1000000, 9999999);
+                this.status = false;
+            }
+            
+        }
+
+        const vaisius = new Fruit();
+
+        // for(let i = 0; i < 20; i++) {
+        //     const array = [];
+        //     new Fruit();
+        //     array.push(vaisius);
+        //     console.log(array);
+        // }
+
+
+        
+
+       
+        
+        class Krepsys {
+
+        }
+        // setStatus
+        console.log(vaisius);
+
+
+
+
+
+
+
+
+
+        //     setStatusas() {
+        //         this.statusas = this.statusas ? false : true;
+        //     }
+
+        //     setGarsas(lygis) {
+        //         if (lygis < 0 || lygis > 100) return;
+        //         this.garsas = lygis;
+        //         return this;
+        //     }
+
+        //     setKanalas(numeris) {
+        //         // if(numeris > 50) {     vietoje if ir else
+        //         //     this.kanalas = 1;
+        //         // } else {
+        //         //     this.kanalas = numeris;
+        //         // }
+        //         this.kanalas = (numeris > 50 || numeris < 1) ? 1 : numeris; // vietoje if ir else su ternery operatoriumi.
+        //         return this;
+        //     }
+
+        //     setAtstatymas() {
+        //         this.kanalas = 1;
+        //         this.garsas = 50;
+        //         return this;
+        //     }
+
+        //     dabartiniaiNustatymai() {
+        //         if(!this.statusas) return '';
+                
+        //         return `Televizorius ${this.gamintojas} šiuo metu rodo ${this.kanalas} kanalą. Garso lygis ${this.garsas}.`;
+
+        //     }
+        // }
+
+        // // teliko testavimo pradžia
+
+        // // const tv = new Televizorius('Sony');
+
+        // // console.log('Įjungiame teliką: ', tv);
+
+        // // tv.setGarsas(0);
+        // // console.log('Nutildome garsą: ', tv);
+
+        // // tv.setGarsas(78);
+        // // console.log('Keičiame garsą: ', tv);
+
+        // // tv.setKanalas(5);
+        // // console.log('Keičiame kanalą: ', tv);
+
+        // // tv.setKanalas(51);
+        // // console.log('Keičiame kanalą: ', tv);
+
+        // // tv.setAtstatymas();
+        // // console.log('Gamykliniai nustatymai: ', tv);
+
+        // // tv.setGarsas(76);
+        // // tv.setKanalas(26);
+
+        // // console.log(tv.dabartiniaiNustatymai());
+        // // console.log('Sujungta komanda: ', tv.setKanalas(8).setGarsas(19).dabartiniaiNustatymai());
+
+        // // Televizoriaus testavimo pabaiga
+
+        // const tvOutput = document.querySelector('#output');
+        // console.log(tvOutput);
+        // const powerButton = document.querySelector('.power-button');
+        // const channelUp = document.querySelector('.channel-up');
+        // const channelDown = document.querySelector('.channel-down');
+        // const volumeUp = document.querySelector('.sound-up');
+        // const volumeDown = document.querySelector('.sound-down');
+
+        // const tv = new Televizorius('BlueBox');
+
+        // powerButton.addEventListener('click', () => {
+        //     tv.setStatusas();
+        //     // if(tv) {
+        //     //     tv = false;
+        //     // } else {
+        //     //     tv = new Televizorius('BlueBox');
+        //     // }
+
+        //     // tv = tv ? false : new Televizorius('BlueBox'); // tikrinam ar telikas ijungtas
+
+        //     // tvOutput.textContent = tv ? tv.dabartiniaiNustatymai() : '';
+        //     tvOutput.textContent = tv.dabartiniaiNustatymai();
+            
+        // });
+
+        // channelUp.addEventListener('click', () => {
+        //     tv.setKanalas(tv.kanalas + 1);
+
+        //     tvOutput.textContent = tv.dabartiniaiNustatymai();
+        // }) 
+
+        // channelDown.addEventListener('click', () => {
+        //     tv.setKanalas(tv.kanalas - 1);
+
+        //     tvOutput.textContent = tv.dabartiniaiNustatymai();
+        // }) 
+
+        // volumeUp.addEventListener('click', () => {
+        //     tv.setGarsas(tv.garsas + 1);
+
+        //     tvOutput.textContent = tv.dabartiniaiNustatymai();
+        // })
+
+        // volumeDown.addEventListener('click', () => {
+        //     tv.setGarsas(tv.garsas - 1);
+
+        //     tvOutput.textContent = tv.dabartiniaiNustatymai();
+        // })
+
+
+
+    </script>
+</body>
+
+</html>

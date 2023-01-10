@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP - Object Oriented Programming</title>
+</head>
+<body>
+    <script>
+        // inkapsuliacija
+        // new Date() // sukuriame klasę panaudodami žodį new
+
+        class Automobiliai {
+            // klasės konstrukcija, klasė yra dar aukštesnis lygmuo kuris turi savo scope
+            // ir jame galima patalpinti ką norime. 
+
+            constructor(vairas, langai, pedalai) { // reikšmė skaitoma iš constructor() skliaustelių
+                this.vairas = vairas; // savybe priskiriama raktu this
+                this.langai = langai; // savybe, property
+                this.pedalai = pedalai; // savybe, property
+            }
+            // Funkcija patalpinta klaseje
+            ratai() { // metodas
+                return 'Mašina turi keturis ratus';
+            }
+
+            getVairas() {
+                return 'Vairas automobilyje yra: ' + this.vairas;
+            } 
+            
+            setVairas(kiekis) {
+                this.vairas = kiekis;
+                return this;
+            }
+            
+
+        }
+
+        // instancija yra objektas grazinamas po klases issaukimo (Instance).
+        const auto = new Automobiliai(1, 6, 3);
+
+        console.log(auto);
+
+        auto.setVairas(1);
+
+        console.log(auto.setVairas(10).getVairas());
+
+
+        // console.log(auto.vairas); išveda vairas turinį 1
+        // console.log(auto.ratai()); grąžina ratai reikšmę ar turinį Mašina turi keturis ratus;
+        
+        // console.log(auto.langai, auto.vairas);
+
+
+        
+
+    </script>
+</body>
+</html>

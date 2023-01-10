@@ -1,0 +1,672 @@
+:root {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    background-color: white;
+    font-family: 'Open Sans', sans-serif;
+    color: #707070;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.container {
+    max-width: 1140px;
+}
+
+.heading {
+    max-width: 730px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.heading h2 {
+    font-size: 36px;
+    margin: 0 0 1.5rem;
+}
+
+.heading p {
+    font-size: 18px;
+    line-height: 34px;
+    margin-bottom: 2rem;
+}
+
+header {
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* z-index savybė nurodo elementų atvaizdavimo prioritetą */
+    z-index: 2;
+}
+
+header.scrolling {
+    background:rgb(169, 12, 172);
+    z-index: 10;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .logo img {
+    width: 160px;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+header nav ul a {
+    color: white;
+    opacity: 0.8;
+    text-decoration: none;
+    padding: 10px 12px;
+    display: block;
+    font-size: 13px;
+    transition: all 300ms ease-in-out;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header nav ul a:hover {
+    opacity: 1;
+}
+
+section.home {
+    /* Du taškai nurodo perėjimą viena direktoriją atgal iš folderio kuriame randasi esamas failas */
+    background: url('../images/hero-bg-3.jpg');
+    height: 690px;
+    padding-top: 200px;
+    position: relative;
+}
+
+section.home::before {
+    content: "";
+    background: rgb(140,30,199);
+    background: linear-gradient(90deg, rgba(140,30,199,1) 37%, rgba(26,65,237,1) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+section.home::after {
+    content: "";
+    background: url(../images/wave-line-bw-long.svg) repeat-x top left;
+    width: 100%;
+    height: 28px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+section.home .container {
+    position: relative;
+    display: flex;
+}
+
+section.home .left {
+    width: 50%;
+    color: white;
+}
+
+section.home .right {
+    width: 50%;
+    position: relative;
+}
+
+section.home .left h1 {
+    font-size: 46px;
+    margin: 0 0 18px;
+    color: white;
+}
+
+section.home .left p {
+    /* line-height savybė nurodo eilutės aukštį */
+    line-height: 32px;
+    font-size: 19px;
+    margin-bottom: 1.8rem;
+}
+
+section.home .iphone {
+    max-width: 350px;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: -70px;
+    z-index: 2;
+}
+
+section.home .iphone img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+section.home .video-wrapper {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    padding: 19px;
+}
+
+section.home .video-wrapper video {
+    width: 100%;
+    border-radius: 40px;
+} 
+
+section.clients {
+    padding-top: 40px;
+}
+
+section.clients .container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+section.clients .label {
+    color: #707070;
+    font-size: 18px;
+}
+
+section.clients ul {
+    display: flex;
+    gap: 30px;
+}
+
+section.clients ul li img {
+    width: 85px;
+}
+
+section.features {
+    padding: 140px 0 80px;
+}
+
+section.features .features-list {
+    display: flex;
+    gap: 30px;
+}
+
+section.features .feature-box {
+    text-align: center;
+}
+
+section.features .inner-box {
+    box-shadow: 0 0 30px rgb(0 0 0 / 11%);
+    padding: 50px 45px;
+    border-radius: 5px;
+    border-top: 4px solid;
+    transition: all 200ms ease-in-out;
+}
+
+section.features .inner-box:hover {
+    transform: translateY(-10px);
+}
+
+section.features .border-deep-purple {
+    border-color: #7202bb;
+}
+
+section.features .border-blue {
+    border-color: #3264f5;
+}
+
+section.features .border-purple {
+    border-color: #960ab7;
+}
+
+section.features .feature-box img {
+    max-width: 80px;
+}
+
+section.features .feature-box h3 {
+    font-size: 18px;
+    margin: 2rem 0 1rem;
+}
+
+section.features .feature-box p {
+    font-size: 15px;
+    line-height: 26px;
+}
+
+section.features .feature-tag {
+    text-transform: uppercase;
+    font-size: 10px;
+    padding: 5px 7px 4px;
+    border-radius: 3px;
+}
+
+section.features .color-1 {
+    background-color: rgba(255, 22, 78, 0.15);
+    color: #ff164e;
+}
+
+section.features .color-2 {
+    background: rgba(145, 35, 255, 0.15);
+    color: #9123ff;
+}
+
+section.features .color-3 {
+    background: rgba(46, 191, 109, 0.15);
+    color: #2ebf6d;
+}
+
+section.features .color-4 {
+    background: rgba(242, 92, 127, 0.15);
+    color: #f25c7f;
+}
+
+section.features .color-5 {
+    background: rgba(52, 19, 247, 0.15);
+    color: #3413f7;
+}
+
+section.features .color-6 {
+    background: rgba(255, 124, 63, 0.15);
+    color: #ff7c3f;
+}
+
+section.tabs .tabs-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+section.tabs .tabs-nav ul li {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #333333;
+    gap: 10px;
+    border-bottom: 2px solid #c4c4c4;
+    padding: 0 0 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+section.tabs .tabs-nav ul li:hover {
+    border-color: #e9ecef;
+    cursor: pointer;
+}
+
+section.tabs .color-1 {
+    color: rgb(247, 215, 35);
+}
+
+section.tabs .color-2 {
+    color: rgb(165, 7, 212);
+}
+
+section.tabs .color-3 {
+    color: rgb(7, 31, 212);
+}
+
+section.tabs .color-4 {
+    color: rgb(234, 8, 65);
+}
+
+section.tabs .content {
+    display: flex;
+    padding-top: 3rem;
+}
+
+section.tabs .left,
+section.tabs .right {
+    width: 50%;    
+}
+
+section.tabs .right {
+    text-align: right;
+}
+
+section.tabs .right img {
+    max-width: 450px;
+}
+
+section.tabs .left .number {
+    color: #7202bb;
+    font-size: 70px;
+}
+
+section.tabs .left h3 {
+    font-size: 30px;
+    margin: 12px 0 1.5rem;
+}
+
+section.tabs .left p {
+    line-height: 26px;
+}
+
+section.tabs .left a {
+    color: #3264f5;
+    position: relative;
+}
+
+section.tabs .left a:hover {
+    color: #7202bb;
+}
+
+section.tabs .left a::before,
+section.tabs .left a::after {
+    content: "";
+    width: 1px;
+    height: 10px;
+    background: #3264f5;
+    position: absolute;
+    top: 10px;
+    right: -15px;
+    transform: rotate(45deg);
+}
+
+section.tabs .left a::after {
+    top: 3px;
+    transform: rotate(-45deg);
+}
+
+section.tabs .content {
+    display: none;
+}
+
+#section-1 {
+    display: flex;
+}
+
+section.technology img {
+    max-width: 100%;
+}
+
+section.technology h2 {
+    font-size: 36px;
+}
+
+section.technology h3 {
+    font-size: 18px;
+    margin-top: 1.5rem;
+}
+
+section.technology .right-column {
+    padding-top: 6rem;
+    line-height: 1.7rem;
+}
+
+section.technology .right-column i.bi {
+    color: white;
+    background-color: #6a06ad;
+    font-size: 24px;
+    width: 55px;
+    display: inline-block;
+    height: 55px;
+    text-align: center;
+    line-height: 47px;
+    border-radius: 3px;
+}
+
+section.screenshots .heading {
+    margin-bottom: 0;
+}
+
+section.screenshots .heading p {
+    font-size: 14px;
+    line-height: 26px;
+}
+
+section.screenshots .slider {
+    width: 100%;
+    overflow: hidden;
+    padding: 3rem 0 3.5rem;
+}
+
+section.screenshots .slider ul {
+    gap: 2.5rem;
+    margin-left: -7rem;
+}
+
+section.screenshots .slider img {
+    max-width: 235px;
+    border-radius: 24px;
+    border: 1px solid #ebebeb;
+}
+
+section.screenshots .iphone-frame {
+    width: 285px;
+    height: 518px;
+    background: url(../images/phone-frame2.png) no-repeat center center;
+    background-size: 100% 100%;
+    top: 3px;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%)
+}
+
+section.screenshots .slider li.active img {
+    transform: scale(1.18);
+}
+
+section.app {
+    background-image: linear-gradient(to left, rgba(50, 100, 245, 0.90), rgba(74, 84, 232, 0.88), rgba(91, 66, 219, 0.85), rgba(104, 44, 203, 0.88), rgba(114, 2, 187, 0.90));
+    color: white;
+}
+
+section.app img {
+    max-width: 100%;
+}
+
+section.app h2 {
+    font-size: 38px;
+    color: white;
+}
+
+section.app p {
+    font-size: 18px;
+    line-height: 32px;
+    margin: 1.5rem 0;
+}
+
+section.testimonials .testimonial {
+    padding: 1.5rem;
+    font-size: 15px;
+    line-height: 28px;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px rgb(0 0 0 / 8%);
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+section.testimonials .testimonial::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 30px 30px 0 0;
+    border-color: #f7f7f7 transparent transparent transparent;
+    position: absolute;
+    bottom: -30px;
+    left: 1.5rem;
+}
+
+section.testimonials blockquote {
+    margin-bottom: 5px;
+}
+
+section.testimonials .rating {
+    color: #ff7c3f;
+    letter-spacing: 3px;
+}
+
+section.testimonials .digit-rating small {
+    font-size: 13px;
+}
+
+section.testimonials .author .photo img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+section.testimonials .author-info h4 {
+    font-size: 20px;
+    margin: 0;
+}
+
+section.pricing .box {
+    background: white;
+    border: 1px solid #ebebeb;
+    padding: 1.5rem 1rem;
+}
+
+section.pricing .box h4 {
+    font-size: 18px;
+}
+
+section.pricing .box .price {
+    font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 1.5rem 0 1rem;
+    position: relative;
+}
+
+section.pricing .box .price::after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgb(235,235,235);
+    background: radial-gradient(circle, rgba(235,235,235,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+section.pricing .box .price .amount {
+    font-weight: 700;
+}
+
+section.pricing .box .features {
+    color: rgb(132, 146, 166);
+    font-size: 14px;
+    padding: 1rem 0;
+}
+
+section.pricing .box .features li {
+    padding: .3rem 0;
+}
+
+.buttons {
+    display: flex;
+    /* gap savybė sukuria tarpus tarp elementų, išskyrus pirmojo elemento kairės pusės atitraukimą ir paskutinio elemento atstūmimą iš dešinės */
+    gap: 18px;
+}
+
+.button {
+    display: block;
+    padding: 10px 25px;
+    border: 1px solid white;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+    /* border-radius savybe užlenkia bloko kampus, taip pat suteikia galimybę suformuoti apskritimą */
+    border-radius: 24px;
+    transition: all 300ms ease-in-out;
+}
+
+.button i {
+    margin-right: .5rem;
+}
+
+.white-button {
+    background-color: white;
+    color: #7202bb;
+}
+
+.white-button:hover {
+    background: none;
+    color: white;
+}
+
+.transparent-button:hover {
+    background-color: white;
+    color: #7202bb;
+}
+
+.purple-border-button {
+    color: #7202bb;
+    border: 2px solid #7202bb;
+    transition: all .2s ease-in-out;
+    font-weight: 400;
+}
+
+.purple-border-button:hover {
+    background-color: #7202bb;
+    color: white;
+}
+
+.purple-fill-button {
+    background-color: #7202bb;
+    color: white;
+    transition: all .2s ease-in-out;
+    border: 2px solid #7202bb;
+    font-weight: 400;
+}
+
+.purple-fill-button:hover {
+    background-color: white;
+    color: #7202bb;
+}
+
+.grey-background {
+    background-color: #f7f7f7;
+}
+
+.section-padding {
+    padding: 6rem 0;
+}
+
+.pricing-buttons {
+    display: flex;
+}
+
+.pricing-buttons button {
+    background: none;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    padding: .35rem 1rem;
+    border: 2px solid #7202bb;
+    border-right: none;
+} 
+
+.pricing-buttons button.active {
+    background: #7202bb;
+    color: white;
+} 
+
+.pricing-buttons button:first-child {
+    border-radius: 3px 0 0 3px;
+}
+
+.pricing-buttons button:last-child {
+    border-right: 2px solid #7202bb;
+    border-radius: 0 3px 3px 0;
+}

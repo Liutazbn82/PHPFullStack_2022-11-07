@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer - timeout</title>
+</head>
+
+<body>
+    <h3 style="text-align: center">Taimeris</h3>
+    <form onsubmit="start(time)">
+        <label>Kiek laiko lauksim?</label>
+        <input type="number" name="laikas" alt="10">
+        <button>Start</button>
+    </form>
+    <script>
+        function start() {
+            console.log(laikas)
+        }
+        const data = [
+            {   // objektas kuris simbolizuoja elutę
+                name: 'Treniruoklis',
+                qty: 2,
+                price: 200,
+                location: 'Kaunas',
+                // sum: 500
+                picture: 'https://picsum.photos/50/50?random=1'
+            },  // objekto (eilutės) pabaiga
+        ];
+
+        const start = (event) => {
+            event.preventDefault(); // sustabdo standartini veikima kai paspaudus mygtuka puslapis perkraunamas
+
+            // let price = document.querySelector('[name="price"]').value;
+            // document.querySelector('[name="price"]').value = price.replace(',', '.');
+
+            // const picture = document.querySelector('[name="picture"]').value; // attribute selectors
+            const time = {
+                picture: document.querySelector('[name="picture"]').value,  // attribute selectors 
+            }
+
+            let index = document.querySelector('form').dataset.edit;
+            
+            data[index ? index : data.length] = product; // su ternery operatoriumi
+
+            delete document.querySelector('form').dataset.edit;
+
+            document.querySelector('form button').textContent = addLabel;
+            
+            showResults();
+        }
+
+     
+        // setTimeout funkcija aktyvuojama vieną kartą
+            let time = 0;
+            for (let i = 0; i < time; i++) {
+                console.log(i)
+            setTimeout(() => {
+                console.log('veiksmas nutiko po 3 sekundziu');
+            }, time);
+        }
+
+       
+
+
+
+
+        // setTimeout(() => {
+        //     console.log('veiksmas nutiko po 3 sekundziu');
+        // }, 3000);
+
+        // // funkcija aktyvuojama vis iš naujo pagal nurodytą laiko tarpą.
+        // setInterval(() => {
+        //     console.log('Laikas');
+        // }, 2000);
+    </script>
+</body>
+
+</html>

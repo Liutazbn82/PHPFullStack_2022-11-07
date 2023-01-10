@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kvadratinis Žaidimas</title>
+
+    <style>
+        .container {
+            display: flex;
+            width: 80%;
+
+        }
+
+        .zaidimo_zona {
+            margin: 0;
+            width: 50%;
+            height: 500px;
+            border: 10px solid #5a19c4;
+            padding: 10px;
+        }
+
+        .kvadratas {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            display: none;
+        }
+
+        .taisykles {
+            text-align: left;
+            width: 30%;
+        }
+
+        .z_info {
+            margin-left: 50px;
+        }
+
+        .k_info {
+            margin-left: 50px;
+        }
+
+        .rezultatai {
+            margin-left: 50px;
+        }
+
+        .laikmatis {
+            margin: auto;
+            width: 10%;
+
+        }
+
+        .zaidimo_paleidimas {
+            margin-top: 420px;
+            margin-left: 400px;
+            width: 12%;
+        }
+
+        .zaidimo_pauze {
+            margin-top: 420px;
+            margin-left: 400px;
+            width: 15%;
+            display: none;
+        }
+
+        .zaidimo_pauze1 {
+            margin-top: 420px;
+            margin-left: 400px;
+            width: 15%;
+            display: none;
+        }
+
+        .zaidimo_paleidimas1 {
+            margin-top: 420px;
+            margin-left: 400px;
+            width: 19%;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="zaidimo_zona">
+            <div class="kvadratas" id="kvadratas"></div>
+            <div class="laikmatis">
+                <h3 class="nuliukai">00:00</h3>
+            </div>
+            <input type="button" class="zaidimo_paleidimas" value="Pradėti žaidimą" onclick="pradetiZ()">
+            <input type="button" class="zaidimo_paleidimas1" value="Pradėti žaidimą iš naujo" onclick="pradetiZ()">
+            <input type="button" class="zaidimo_pauze" value="Pristabdyti žaidimą">
+            <input type="button" class="zaidimo_pauze1" value="Tęsti žaidimą">
+        </div>
+        <div>
+            <div class="z_info">
+                <h3>Žaidėjo taškai : </h3>
+            </div>
+            <div class="k_info">
+                <h3>Kompiuterio taškai : </3>
+            </div>
+            <div class="rezultatai">
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="info">
+        <div class="taisykles">
+            <h4>Žaidimo taisyklės</h4>
+            <p>Paspaudus mygtuką "Pradėti žaidimą" žaliais konturais apribotame plote betkurioje vietoje pasirodys
+                skirtingos spalvos kvadratas. jūsų užduotis
+                paspausti ant kvadrato greičiau nei tai padaro jūsų oponentas (Šiuo atvėju kompiuteris), kuris tam
+                veiksmui atlikti užtruka 1s. Jei spėjate
+                ant kvadrato paspausti greičiau nei kompiuteris tašką gaunate jūs, kitu atvėju - kompiuteris. Žaidimą
+                sudaro 10 raundų, vieno raundo trukmė 30s.
+            </p>
+            <h4>sekmės!</h4>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -71,9 +71,13 @@
         <input type="float" name="price" class="form-control">
         <label>Sandėlis:</label>
         <input type="text" name="location" class="form-control">
-        <button>Add</button>
+        <button>Pridėti</button>
+        <button>Redaguoti</button>
     </form>
     <script>
+        const addLabel = 'Pridėti';
+        const editLabel = 'Redaguoti';
+
         const data = [
             {   // objektas kuris simbolizuoja elutę
                 name: 'Treniruoklis',
@@ -139,7 +143,8 @@
                     <td>${product.location}</td>
                     <td>${product.price * product.qty}</td>
                     <td>
-                        <button onclick="deleteItem(${index})">Trinti</button>
+                        <button onclick="deleteItem(${index})" class="btn btn-danger">Trinti</button>
+                        <button onclick="editItem(${index})" class="btn btn-primary">Redaguoti</button>
                     </td>
                 </tr>
             `;  // pasvira kabutė uždaro objekto aprašymą (stringas su ${kintamasis} 
@@ -159,6 +164,16 @@
             showResults();
         }
 
+        const editItem = (index) => {
+            // document.querySelector('form').setAttribute('data-edit', index);
+            document.querySelector('form button').textContent = editLabel;
+            document.querySelector('[name="picture"]').value = data[index].picture;
+            document.querySelector('[name="name"]').value = data[index].name;
+            document.querySelector('[name="qty"]').value = data[index].qty;
+            document.querySelector('[name="price"]').value = data[index].price;
+            document.querySelector('[name="location"]').value = data[index].location;
+        }
+
         const addResult = (event) => {
             event.preventDefault(); // sustabdo standartini veikima kai paspaudus mygtuka puslapis perkraunamas
 
@@ -174,13 +189,17 @@
                 location: document.querySelector('[name="location"]').value,  
             }
 
+            let index = document.querySelector('form').dataset.edit;
             
-            data[data.length] = product;
+            data[index ? index : data.length] = product; // su ternery operatoriumi
+
+            delete document.querySelector('form').dataset.edit;
+
+            document.querySelector('form button').textContent = addLabel;
             
             showResults();
         }
         
-
         showResults();
 
     </script>

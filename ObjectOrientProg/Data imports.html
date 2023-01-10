@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data imports</title>
+</head>
+<body>
+    <script>
+        const data = {
+            vaisiai: 'Obuolys, Apelsinas, Bananas, Slyva',
+            automobiliai: 'Audi, BMW, Opel, Fiat',
+            kompiuteriai: 'Apple, HP, Lenovo, Sony'
+        }
+
+        const {automobiliai, kompiuteriai} = data; // paemimas is objekto reiksme priskiriant kintamaji
+        console.log(data.automobiliai); // kad nerasyt data eilute virsuje.
+        console.log(automobiliai);
+
+        const masyvas = ['Labas', 'Pasauli'];
+
+        const [ pirma, antra ] = masyvas;
+
+        const first = masyvas[0];
+        const second = masyvas[1];
+
+        console.log(pirma, antra)
+
+    </script>
+</body>
+</html>

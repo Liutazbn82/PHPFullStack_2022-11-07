@@ -7,15 +7,20 @@
     <title>Landing Page</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href='https://unpkg.com/css.gg/icons/all.css' rel='stylesheet'>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="assets/js/script.js" defer></script> <!--defer komanda uzkrauna scriptą greiciau, nereikia jo rasyti apacioje-->
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo">
                 <a href="#">
-                    <img src="assets/images/logo-white.png" alt="Landing page"/>
+                    <img src="assets/images/logo-white.png" alt="Landing page" />
                 </a>
             </div>
             <nav>
@@ -46,12 +51,352 @@
                 </div>
                 <div class="right">
                     <div class="iphone">
-                        <img src="assets/images/iphone-mask.png" alt="iphone"/>
+                        <img src="assets/images/iphone-mask.png" alt="Iphone" />
                         <div class="video-wrapper">
                             <video autoplay loop muted playsinline>
                                 <source src="assets/media/app-overview.mp4" type="video/mp4" />
                             </video>
-
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="clients">
+            <div class="container">
+                <div class="label">Trusted by 5,000 company:</div>
+                <ul>
+                    <li>
+                        <img src="assets/images/logos/clients-logo-01.png" alt="First client" />
+                    </li>
+                    <li>
+                        <img src="assets/images/logos/clients-logo-02.png" alt="Second client" />
+                    </li>
+                    <li>
+                        <img src="assets/images/logos/clients-logo-03.png" alt="Third client" />
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="features">
+            <div class="container">
+                <div class="heading">
+                    <h2>Join the World’s Fastest Company</h2>
+                    <p>Turn your mobile visitors into your best customers. Efficiently syndicate flexible content via cost effective initiatives completely leverage vertical quality.</p>
+                </div>
+                <div class="features-list">
+                    <div class="feature-box">
+                        <div class="inner-box border-deep-purple">
+                            <div class="image">
+                                <img src="assets/images/promo-2.svg" alt="First feature" />
+                            </div>
+                            <h3>Live Customer Support</h3>
+                            <p>Monotonectally evolve wireless materials after multidisciplinary catalysts for change.</p>
+                            <span class="feature-tag color-1">Smart</span>
+                            <span class="feature-tag color-2">Flexible</span>
+                        </div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="inner-box border-blue">
+                            <div class="image">
+                                <img src="assets/images/promo-1.svg" alt="Second feature" />
+                            </div>
+                            <h3>Tracking Your Location</h3>
+                            <p>Dramatically generate orthogonal relationships via technically sound expertise client.</p>
+                            <span class="feature-tag color-3">Smart</span>
+                            <span class="feature-tag color-4">Flexible</span>
+                        </div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="inner-box border-purple">
+                            <div class="image">
+                                <img src="assets/images/promo-3.svg" alt="Third feature" />
+                            </div>
+                            <h3>Online App Store</h3>
+                            <p>Credibly productivate efficient markets before enterprise-wide ideas efficiently customized.</p>
+                            <span class="feature-tag color-5">Smart</span>
+                            <span class="feature-tag color-6">Flexible</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="grey-background tabs section-padding">
+            <div class="container">
+                <div class="tabs-nav">
+                    <ul>
+                        <li data-target="section-1">
+                            <i class="gg-arrow-top-right-r color-1"></i>
+                            Latest Technology
+                        </li>
+                        <li data-target="section-2">
+                            <i class="bi-wifi color-2"></i>
+                            Connect Wifi
+                        </li>
+                        <li data-target="section-3">
+                            <i class="gg-shopping-cart color-3"></i>
+                            Online Shop
+                        </li>
+                        <li data-target="section-4">
+                            <i class="gg-display-grid color-4"></i>
+                            Display Store
+                        </li>
+                    </ul>
+                </div>
+                <div id="section-1" class="content">
+                    <div class="left">
+                        <div class="number">01.</div>
+                        <h3>Fully Branded Portal</h3>
+                        <p>Assertively incentivize long-term high-impact scenarios whereas accurate imperatives.</p>
+                        <p>Quickly communicate multimedia based materials for enabled channels. Seamlessly disintermediate robust best practices for B2C e-tailers. Efficiently procrastinate prospective experiences.</p>
+                        <a href="#">Learn more about this</a>
+                    </div>
+                    <div class="right">
+                        <img src="assets/images/svg-icon-1.svg" alt="Icon" />
+                    </div>
+                </div>
+                <div id="section-2" class="content">
+                    <div class="left">
+                        <div class="number">02.</div>
+                        <h3>Returns to Exchanges</h3>
+                        <p>Quickly communicate multimedia based materials for enabled channels. Turn Returns to Exchanges Seamlessly disintermediate robust best practices for B2C e-tailers. Efficiently procrastinate prospective experiences.</p>
+                        <p>Dramatically reconceptualize user-centric expertise whereas competitive synergy.</p>
+                        <a href="#">Learn more about this</a>
+                    </div>
+                    <div class="right">
+                        <img src="assets/images/svg-icon-1.svg" alt="Icon" />
+                    </div>
+                </div>
+                <div id="section-3" class="content">
+                    <div class="left">
+                        <div class="number">03.</div>
+                        <h3>Multichannel Returns</h3>
+                        <p>Quickly communicate multimedia based materials to team driven infrastructures. Seamlessly disintermediate robust best practices for B2C e-tailers. Efficiently procrastinate prospective experiences.</p>
+                        <p>Dar turimas perkelti turinys kuris esmės nekeičia.</p>
+                        <a href="#">Learn more about this</a>
+                    </div>
+                    <div class="right">
+                        <img src="assets/images/svg-icon-1.svg" alt="Icon" />
+                    </div>
+                </div>
+                <div id="section-4" class="content">
+                    <div class="left">
+                        <div class="number">n... th</div>
+                        <h3>Set goals & timelines</h3>
+                        <p>Labai svarbus tekstas kuris liko ten kur liko :)</p>
+                        <p>Dar vienas tekstas aprašantis gyvenimo prasmę.</p>
+                        <a href="#">Learn more about this</a>
+                    </div>
+                    <div class="right">
+                        <img src="assets/images/svg-icon-1.svg" alt="Icon" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="technology section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-7">
+                        <img src="assets/images/how-work.png" alt="How it works?" />
+                    </div>
+                    <div class="col-5 right-column">
+                        <h2>Bring Along Your Favorite Technology</h2>
+                        <p>Energistically disseminate sustainable services without e-business imperatives. Holisticly maximize world-class collaboration and idea-sharing vis-a-vis reliable. Connect your existing plugins and amplify your mobile app.</p>
+                        <div class="row pt-4">
+                            <div class="col-6">
+                                <i class="bi bi-palette"></i>
+                                <h3>Design Focused</h3>
+                                <p>Appropriately recaptiualize multimedia based top-line e-services.</p>
+                            </div>
+                            <div class="col-6">
+                                <i class="bi bi-megaphone"></i>
+                                <h3>Marketing Activity</h3>
+                                <p>Dynamically recaptiualize fully researched e-services applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="grey-background screenshots section-padding">
+            <div class="container">
+                <div class="heading">
+                    <h2>Show Our Apps Screenshots</h2>
+                    <p>Credibly synthesize multimedia based networks vis-a-vis top-line growth strategies. Continually leverage existing worldwide interfaces</p>
+                </div>
+                <div class="slider position-relative">
+                    <div class="iphone-frame position-absolute"></div>
+                    <ul class="d-flex">
+                        <li><img src="assets/images/screenshots/01.png" alt="01" /></li>
+                        <li><img src="assets/images/screenshots/02.png" alt="02" /></li>
+                        <li class="active"><img src="assets/images/screenshots/03.png" alt="03" /></li>
+                        <li><img src="assets/images/screenshots/04.png" alt="04" /></li>
+                        <li><img src="assets/images/screenshots/05.png" alt="05" /></li>
+                        <li><img src="assets/images/screenshots/06.png" alt="06" /></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="app pt-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-5">
+                        <h2>Download Our App</h2>
+                        <p>Conveniently transform frictionless mindshare after orthogonal manufactured products.</p>
+                        <div class="buttons">
+                            <a href="#" class="button white-button"><i class="bi bi-apple"></i> App Store</a>
+                            <a href="#" class="button transparent-button"><i class="bi bi-android2"></i> Play Store</a>
+                        </div>                    
+                    </div>
+                    <div class="col-7">
+                        <img src="assets/images/hand-with-app.png" alt="Hands" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="testimonials section-padding">
+            <div class="container">
+                <div class="heading">
+                    <h2>Testimonials What Clients Say</h2>
+                    <p>Rapidiously morph transparent internal or "organic" sources whereas resource sucking e-business. Conveniently innovate compelling internal.</p>
+                </div>
+                <div class="row testimonials-list">
+                    <div class="col-4">
+                        <div class="grey-background testimonial">
+                            <blockquote>Intrinsicly facilitate functional imperatives without next-generation meta-services. Compellingly revolutionize worldwide users vis-a-vis enterprise best practices.</blockquote>
+                            <div class="rating">
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                            </div>
+                            <div class="digit-rating">
+                                <strong>5.0</strong> 
+                                <small>BizBite</small>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 author">
+                            <div class="photo">
+                                <img src="assets/images/profiles/client-1.jpg" alt="Austin Cesar" />
+                            </div>
+                            <div class="author-info">
+                                <h4>Austin Cesar</h4>
+                                <div class="company">ThemeTags</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="grey-background testimonial">
+                            <blockquote>Intrinsicly facilitate functional imperatives without next-generation meta-services. Compellingly revolutionize worldwide users vis-a-vis enterprise best practices.</blockquote>
+                            <div class="rating">
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                            </div>
+                            <div class="digit-rating">
+                                <strong>5.0</strong> BizBite
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 author">
+                            <div class="photo">
+                                <img src="assets/images/profiles/client-2.jpg" alt="Pirte Karol" />
+                            </div>
+                            <div class="author-info">
+                                <h4>Pirte Karol</h4>
+                                <div class="company">ThemeTags</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="grey-background testimonial">
+                            <blockquote>Intrinsicly facilitate functional imperatives without next-generation meta-services. Compellingly revolutionize worldwide users vis-a-vis enterprise best practices.</blockquote>
+                            <div class="rating">
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                            </div>
+                            <div class="digit-rating">
+                                <strong>5.0</strong> BizBite
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 author">
+                            <div class="photo">
+                                <img src="assets/images/profiles/client-3.jpg" alt="Aminul Islam" />
+                            </div>
+                            <div class="author-info">
+                                <h4>Aminul Islam</h4>
+                                <div class="company">ThemeTags</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="grey-background section-padding pricing">
+            <div class="container">
+                <div class="row justify-content-around align-items-center">
+                    <div class="col-4">
+                        <div class="heading text-start">
+                            <h2>How We Compare Our Pricing</h2>
+                            <p>Monotonectally mesh visionary supply chains before plug-and-play interfaces. Globally benchmark worldwide information after clicks-and-mortar channels.</p>
+                        </div>
+                        <div class="pricing-buttons">
+                            <button class="active" data-basic="19" data-standard="49">Monthly</button>
+                            <button data-basic="199" data-standard="549">Yearly</button>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <div class="row">
+                            <div class="col-6" data-plan="basic">
+                                <div class="box text-center">
+                                    <h4>Basic</h4>
+                                    <div class="d-flex justify-content-center price">
+                                        <span class="currency">$</span>
+                                        <span class="amount">19</span>
+                                    </div>
+                                    <div class="features">
+                                        <ul>
+                                            <li>Push Notifications</li>
+                                            <li>Data Transfer</li>
+                                            <li>SQL Database</li>
+                                            <li>Search & SEO Analytics</li>
+                                            <li>24/7 Phone Support</li>
+                                            <li>2 months technical support</li>
+                                            <li>2+ profitable keyword</li>
+                                        </ul>
+                                    </div>
+                                    <div class="buttons justify-content-center">
+                                        <a href="#" class="button purple-border-button">Purchase now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6" data-plan="standard">
+                                <div class="box text-center">
+                                    <h4>Standard</h4>
+                                    <div class="d-flex justify-content-center price">
+                                        <span class="currency">$</span>
+                                        <span class="amount">49</span>
+                                    </div>
+                                    <div class="features">
+                                        <ul>
+                                            <li>Push Notifications</li>
+                                            <li>Data Transfer</li>
+                                            <li>SQL Database</li>
+                                            <li>Search & SEO Analytics</li>
+                                            <li>24/7 Phone Support</li>
+                                            <li>1 Year technical support</li>
+                                            <li>50+ profitable keyword</li>
+                                        </ul>
+                                    </div>
+                                    <div class="buttons justify-content-center">
+                                        <a href="#" class="button purple-fill-button">Purchase now</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
