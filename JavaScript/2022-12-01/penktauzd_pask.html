@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penkta užduotis</title>
+</head>
+<body>
+    <button onclick="penktaUzduotis()">Penkta užduotis</button>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min); 
+        }
+
+        function penktaUzduotis() {
+            const skaicius1 = rand(0, 2);
+            const skaicius2 = rand(0, 2);
+            const skaicius3 = rand(0, 2);
+            const skaicius4 = rand(0, 2);
+
+            let nuliai = 0;
+            let vienetai = 0;
+            let dvejetai = 0;
+
+            if(skaicius1 === 0) 
+                nuliai++;
+
+            if(skaicius2 === 0) 
+                nuliai++;
+
+            if(skaicius3 === 0) 
+                nuliai++;
+
+            if(skaicius4 === 0) 
+                nuliai++;
+
+            if(skaicius1 === 1) 
+                vienetai++;
+
+            if(skaicius2 === 1) 
+                vienetai++;
+
+            if(skaicius3 === 1) 
+                vienetai++;
+
+            if(skaicius4 === 1) 
+                vienetai++;
+
+            if(skaicius1 === 2) 
+                dvejetai++;
+
+            if(skaicius2 === 2) 
+                dvejetai++;
+
+            if(skaicius3 === 2) 
+                dvejetai++;
+
+            if(skaicius4 === 2) 
+                dvejetai++;
+
+            document.write('<h2>Gauti skaičiai:', skaicius1, skaicius2, skaicius3, skaicius4,'</h2>');
+            document.write('<h2>Gauti rezultatai:', nuliai, vienetai, dvejetai, '</h2>');
+        }
+    </script>
+</body>
+</html>

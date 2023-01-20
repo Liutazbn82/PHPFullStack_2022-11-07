@@ -1,30 +1,46 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/header/Header';
+import Headline from './components/headline/Headline'
+import Subheadline from './components/subheadline/Subheadline';
+import Footer from './components/footer/Footer';
+import { useId } from 'react'; // paimamas react Hook is react bibliotekos
 
 // Komponentas
-function App() {
-  // JSX sintaksė 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Tai mano pirmoji React aplikacija.
-        </p>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => { 
+
+  const navLinks = ['Tour', 'Product', 'Features', 'Enterprise', 'Support', 'Pricing', 'Cart'];
+
+  const Headlines = () => {
+
+    const products = [];
+    const id = useId();
+    console.log(id)
+
+    for(let i = 0; i < 4; i++) {
+      products.push(<Subheadline key={id+i} />); // generuojam  4 subheadlines, galima yrasyt eilutes paprastai
+    }
+
+    return products;
+  }
+
+  return ( 
+    <> 
+      <Header nuorodos={navLinks} />
+      <main>
+        <Headline />
+        <Headlines /> 
+      </main>
+      <Footer />
+    </>
+  )
+
 }
 
 export default App;
+
+
+
+
+
+
+
