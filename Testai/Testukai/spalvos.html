@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Set the background color of a paragraph</title>
+<style>
+    .red {
+        background-color: rgb(255,0,0);
+        border-radius: 10px;
+        font-style: italic;
+        width: 100px;
+    }
+    .orange {
+        background-color: rgb(255,120,0);
+        border-radius: 10px;
+        font-style: italic;
+        width: 100px;
+    }
+    .yellow {
+        background-color: rgb(255,190,0);
+        border-radius: 10px;
+        font-style: italic;
+        width: 100px;
+    }
+    .green {
+        background-color: rgb(120,220,0);
+        border-radius: 10px;
+        font-style: italic;
+        width: 100px;
+    }
+</style>
+</head>
+<body>
+<input class="red" type="button" value="Raudonas" onclick="set_background()">
+<input class="orange" type="button" value="Oranžinis" onclick="set_background()">
+<input class="yellow" type="button" value="Geltonas" onclick="set_background()">
+<input class="green" type="button" value="Žalias" onclick="set_background()">
+
+<p>Pirmas</p>
+<p>Antras</p> 
+<p>Trecias</p>
+<p>Ketvirtas</p> 
+<script>
+    function set_background() {
+        documentBody = document.getElementsByTagName("body")[0];
+        //Get all the p elements that are descendants of the body
+        myBodyEl = documentBody.getElementsByTagName("p");
+        // get the first p elements
+        pirmas = myBodyEl[0];
+        pirmas.style.background = "rgb(255,0,0)";
+        // get the second p elements
+        antras = myBodyEl[1];
+        antras.style.background = "rgb(255,120,0)";
+        // get the second p elements
+        trecias = myBodyEl[2];
+        trecias.style.background = "rgb(255,190,0)";
+        // get the second p elements
+        vardas4 = myBodyEl[3];
+        vardas4.style.background = "rgb(120,220,0)";
+}
+
+</script>
+</body>
+</html>

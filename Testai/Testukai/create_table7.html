@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>Create a table</title>
+    <style type="text/css">
+        body {
+            margin: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function createTable() {
+            rowNumber = window.prompt("Input number of rows", 1);
+            cellNumber = window.prompt("Input number of columns", 1);
+
+            for (var r = 0; r < parseInt(rowNumber, 10); r++) {
+                var x = document.getElementById('myTable').insertRow(r);
+                console.log('row', r);
+
+                for (var c = 0; c < parseInt(cellNumber, 10); c++) {
+                    var y = x.insertCell(c);
+                    console.log('cell', c);
+                    y.innerHTML = "Row-" + r + " Column-" + c;
+                }
+
+            }
+        }
+
+        var row = document.getElementById("myRow");
+        var x = row.insertCell(0);
+        x.innerHTML = "New cell";
+
+    </script>
+    <table id="myTable" border="1">
+    </table>
+    <form>
+        <input type="button" onclick="createTable()" value="Create the table">
+    </form>
+</body>
+
+</html>
