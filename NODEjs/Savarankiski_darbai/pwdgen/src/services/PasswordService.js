@@ -1,4 +1,6 @@
 export class PasswordService {
+
+    // ASCII simbolių eilių priskyrimas
     static getRandomLowerCase() {
         return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
     }
@@ -16,15 +18,16 @@ export class PasswordService {
         let passwordObj = {};
         for (let key of Object.keys(state)) {
             if(typeof state[key] === 'boolean' && state[key]) {
-                passwordObj = {
-                    ...passwordObj,
-                    [key] : state[key]
-                }
+              
+                 passwordObj[key] = state[key];
             }
         }
+        // console.log('passwordObj', passwordObj);
         return passwordObj;
     }
+
     static generatePassword(passwordObj , passwordLength) {
+        // console.log(passwordObj);
         let thePassword = '';
         for(let i=0; i < Number(passwordLength); i+= Object.keys(passwordObj).length) {
             if(passwordObj.lower)  thePassword += `${this.getRandomLowerCase()}`;
@@ -32,6 +35,9 @@ export class PasswordService {
             if(passwordObj.symbol)  thePassword += `${this.getRandomSymbols()}`;
             if(passwordObj.number)  thePassword += `${this.getRandomNumbers()}`;
         }
-        return thePassword.substring(0,Number(passwordLength));
+        return thePassword.substring(0, Number(passwordLength));
     }
 }
+
+
+// export default PasswordService;
